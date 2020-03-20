@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AHKNavigationController/AHKNavigationController.framework
 ${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework

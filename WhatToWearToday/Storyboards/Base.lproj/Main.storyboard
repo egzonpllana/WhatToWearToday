@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1l4-fH-tse">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -29,6 +29,9 @@
                                         <state key="normal" title="Are you going to travel?" image="car" catalog="system">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="tpu-8v-E2g" kind="show" id="wxV-dX-Nuj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +42,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -155,15 +158,189 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Mua-lM-z3P"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="124.55357142857142"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="QAS-FC-50Y">
+            <objects>
+                <viewController storyboardIdentifier="FindCityMapViewController" id="tpu-8v-E2g" customClass="FindCityMapViewController" customModule="WhatToWearToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96M-pM-6C2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALS-k5-Rwp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="81"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-el-f3a" customClass="UIExtendedView" customModule="WhatToWearToday" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="17" width="382" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opN-01-v8Z">
+                                                <rect key="frame" x="12" y="15" width="358" height="20"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="go"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="opN-01-v8Z" secondAttribute="trailing" constant="12" id="LJK-Uh-zK3"/>
+                                            <constraint firstItem="opN-01-v8Z" firstAttribute="leading" secondItem="2OD-el-f3a" secondAttribute="leading" constant="12" id="NVr-DM-gsR"/>
+                                            <constraint firstItem="opN-01-v8Z" firstAttribute="centerY" secondItem="2OD-el-f3a" secondAttribute="centerY" id="eyY-m1-eC2"/>
+                                            <constraint firstAttribute="height" constant="50" id="riX-Qi-1cc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.059999999999999998"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="2Ap-zK-ttN"/>
+                                    <constraint firstItem="2OD-el-f3a" firstAttribute="leading" secondItem="ALS-k5-Rwp" secondAttribute="leading" constant="16" id="8oK-cl-Ybu"/>
+                                    <constraint firstItem="2OD-el-f3a" firstAttribute="top" secondItem="ALS-k5-Rwp" secondAttribute="top" constant="17" id="C75-b1-pGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="2OD-el-f3a" secondAttribute="trailing" constant="16" id="SlO-xX-aXN"/>
+                                    <constraint firstAttribute="bottom" secondItem="2OD-el-f3a" secondAttribute="bottom" constant="14" id="f0Q-qi-xX5"/>
+                                </constraints>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bTU-IX-X5W">
+                                <rect key="frame" x="0.0" y="169" width="414" height="633"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tpu-8v-E2g" id="IKl-XW-Z11"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-ON-nAt">
+                                <rect key="frame" x="354" y="726" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="OxC-WM-M4E"/>
+                                    <constraint firstAttribute="width" constant="36" id="SeR-ZK-Sod"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="navigation_black_icon"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2me-N0-fli" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-MA-rwT">
+                                        <rect key="frame" x="129" y="14" width="156.5" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-ho-gn9">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Choose your city">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-TJ-n9b">
+                                                <rect key="frame" x="137" y="5" width="19.5" height="22"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="arrow.right" catalog="system">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6Xw-Vh-0bT"/>
+                                    <constraint firstItem="tGQ-MA-rwT" firstAttribute="centerX" secondItem="2me-N0-fli" secondAttribute="centerX" id="BeR-dY-xai"/>
+                                    <constraint firstItem="tGQ-MA-rwT" firstAttribute="centerY" secondItem="2me-N0-fli" secondAttribute="centerY" id="z3v-AH-bCy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ALS-k5-Rwp" firstAttribute="leading" secondItem="RVP-zK-uow" secondAttribute="leading" id="Dg9-EU-5EV"/>
+                            <constraint firstItem="ALS-k5-Rwp" firstAttribute="trailing" secondItem="RVP-zK-uow" secondAttribute="trailing" id="H1c-CC-wDh"/>
+                            <constraint firstItem="2me-N0-fli" firstAttribute="top" secondItem="bTU-IX-X5W" secondAttribute="bottom" id="SrQ-uA-lEI"/>
+                            <constraint firstItem="bTU-IX-X5W" firstAttribute="top" secondItem="ALS-k5-Rwp" secondAttribute="bottom" id="T5W-rq-P9Z"/>
+                            <constraint firstItem="RVP-zK-uow" firstAttribute="bottom" secondItem="2me-N0-fli" secondAttribute="bottom" id="d6b-HM-93j"/>
+                            <constraint firstItem="bTU-IX-X5W" firstAttribute="leading" secondItem="RVP-zK-uow" secondAttribute="leading" id="f6h-38-JVv"/>
+                            <constraint firstItem="2me-N0-fli" firstAttribute="leading" secondItem="RVP-zK-uow" secondAttribute="leading" id="hr2-Xn-nQd"/>
+                            <constraint firstItem="RVP-zK-uow" firstAttribute="trailing" secondItem="9sA-ON-nAt" secondAttribute="trailing" constant="24" id="oR7-hd-s5T"/>
+                            <constraint firstItem="RVP-zK-uow" firstAttribute="bottom" secondItem="9sA-ON-nAt" secondAttribute="bottom" constant="100" id="rF3-2o-kFL"/>
+                            <constraint firstItem="ALS-k5-Rwp" firstAttribute="top" secondItem="RVP-zK-uow" secondAttribute="top" id="rj2-oz-gnh"/>
+                            <constraint firstItem="bTU-IX-X5W" firstAttribute="trailing" secondItem="RVP-zK-uow" secondAttribute="trailing" id="zfI-nl-ZUP"/>
+                            <constraint firstItem="2me-N0-fli" firstAttribute="trailing" secondItem="RVP-zK-uow" secondAttribute="trailing" id="zlM-X5-DfW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RVP-zK-uow"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="CIc-ea-xHx">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ogh-zM-lFg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7i8-5n-EW7">
+                                <rect key="frame" x="20" y="0.0" width="62" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="3Hi-XD-AgQ"/>
+                                    <constraint firstAttribute="width" constant="31" id="fEs-qy-Rys"/>
+                                </constraints>
+                                <state key="normal" image="back_black_icon"/>
+                                <connections>
+                                    <segue destination="VHP-lF-nVJ" kind="unwind" unwindAction="prepareForUnwindToHome:" id="Mgg-KB-Ovp"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSo-rJ-SnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="VHP-lF-nVJ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1871.0144927536232" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jLK-vs-jt1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1l4-fH-tse" customClass="AHKNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Quq-8A-3Cm">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wl7-x7-yGb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0r-5F-70W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
         </scene>
     </scenes>
     <resources>
         <image name="afternoon_wallpaper" width="1125" height="2436"/>
+        <image name="arrow.right" catalog="system" width="64" height="48"/>
+        <image name="back_black_icon" width="24" height="24"/>
         <image name="car" catalog="system" width="64" height="46"/>
         <image name="cloud.sun" catalog="system" width="64" height="44"/>
+        <image name="navigation_black_icon" width="96" height="96"/>
     </resources>
 </document>

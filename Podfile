@@ -7,5 +7,6 @@ target 'WhatToWearToday' do
 
   # Pods for WhatToWearToday
   pod 'SwiftLocation'
+  pod 'AHKNavigationController'
 
 end

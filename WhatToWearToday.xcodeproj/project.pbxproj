@@ -16,6 +16,7 @@
 		52CD4CB424250FFE00762F9A /* UIRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB324250FFE00762F9A /* UIRoundedView.swift */; };
 		52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB52425139B00762F9A /* HomeViewController.swift */; };
 		52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB9242514E200762F9A /* UIExtendedView.swift */; };
+		52CD4CBC24251AB800762F9A /* FindCityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		52CD4CB324250FFE00762F9A /* UIRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedView.swift; sourceTree = "<group>"; };
 		52CD4CB52425139B00762F9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52CD4CB9242514E200762F9A /* UIExtendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendedView.swift; sourceTree = "<group>"; };
+		52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityMapViewController.swift; sourceTree = "<group>"; };
 		CC55662C6D33BAF15B9BD1CA /* Pods-WhatToWearToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWearToday.release.xcconfig"; path = "Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday.release.xcconfig"; sourceTree = "<group>"; };
 		CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToWearToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD4CB52425139B00762F9A /* HomeViewController.swift */,
+				52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,8 +110,8 @@
 		52CD4CAD24250F8C00762F9A /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				52CD4CB324250FFE00762F9A /* UIRoundedView.swift */,
 				52CD4CB9242514E200762F9A /* UIExtendedView.swift */,
+				52CD4CB324250FFE00762F9A /* UIRoundedView.swift */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */,
 				52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */,
 				52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */,
+				52CD4CBC24251AB800762F9A /* FindCityMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

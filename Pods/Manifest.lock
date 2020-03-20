@@ -1,16 +1,20 @@
 PODS:
+  - AHKNavigationController (1.3)
   - SwiftLocation (4.2.0)
 
 DEPENDENCIES:
+  - AHKNavigationController
   - SwiftLocation
 
 SPEC REPOS:
   trunk:
+    - AHKNavigationController
     - SwiftLocation
 
 SPEC CHECKSUMS:
+  AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
 
-PODFILE CHECKSUM: 98bb9c1407536bfbeed71fd677927718ceb2f002
+PODFILE CHECKSUM: f2d067697a030939a22c863f76a8692fe5042b68
 
 COCOAPODS: 1.9.0
