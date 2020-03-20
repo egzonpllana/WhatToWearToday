@@ -78,6 +78,7 @@
 		52CD4C902424D7A200762F9A /* WhatToWearToday */ = {
 			isa = PBXGroup;
 			children = (
+				52CD4C9F2424D7A500762F9A /* Info.plist */,
 				52CD4C912424D7A200762F9A /* AppDelegate.swift */,
 				52CD4C932424D7A200762F9A /* SceneDelegate.swift */,
 				52CD4CAC24250F8200762F9A /* Storyboards */,
@@ -85,7 +86,6 @@
 				52CD4CAD24250F8C00762F9A /* GUI */,
 				52CD4C9A2424D7A500762F9A /* Assets.xcassets */,
 				52CD4C9C2424D7A500762F9A /* LaunchScreen.storyboard */,
-				52CD4C9F2424D7A500762F9A /* Info.plist */,
 			);
 			path = WhatToWearToday;
 			sourceTree = "<group>";
@@ -390,13 +390,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YUQDS8QJFD;
+				DEVELOPMENT_TEAM = FSGKBKB5RK;
 				INFOPLIST_FILE = WhatToWearToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nativecoders.WhatToWearToday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativecoders.WhatToWearToday2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -409,13 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YUQDS8QJFD;
+				DEVELOPMENT_TEAM = FSGKBKB5RK;
 				INFOPLIST_FILE = WhatToWearToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nativecoders.WhatToWearToday;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nativecoders.WhatToWearToday2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

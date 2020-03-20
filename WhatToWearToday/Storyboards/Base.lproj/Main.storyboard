@@ -18,82 +18,25 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="afternoon_wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="Ot1-pz-tZw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aI-iR-pkf" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0g-6s-AKs">
-                                        <rect key="frame" x="100.5" y="20" width="213" height="20"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Are you going to travel?" image="car" catalog="system">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="tpu-8v-E2g" kind="show" id="wxV-dX-Nuj"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Gji-pV-1ZP"/>
-                                    <constraint firstItem="m0g-6s-AKs" firstAttribute="centerY" secondItem="3aI-iR-pkf" secondAttribute="centerY" id="Qdw-zq-gNf"/>
-                                    <constraint firstItem="m0g-6s-AKs" firstAttribute="centerX" secondItem="3aI-iR-pkf" secondAttribute="centerX" id="dru-11-okU"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.93699997660000001" green="0.23899999259999999" blue="0.19200000170000001" alpha="0.77765447440000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pristina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-7P-2j8">
-                                <rect key="frame" x="20" y="700" width="207.5" height="72"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.10957475140681826" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="62"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-l9-oF2">
-                                <rect key="frame" x="30" y="230" width="113.5" height="84"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="72"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: 17°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv4-PV-oDB">
-                                <rect key="frame" x="30" y="322" width="110.5" height="20"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNw-Mu-p7k" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNw-Mu-p7k" userLabel="headerView" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Phk-MZ-fcm">
                                         <rect key="frame" x="32" y="20" width="358" height="40"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="BsT-RV-E6b">
-                                                <rect key="frame" x="0.0" y="7.5" width="268" height="25"/>
+                                                <rect key="frame" x="0.0" y="5" width="277.5" height="30.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sun" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="afw-zf-rtf">
-                                                        <rect key="frame" x="0.0" y="-1.5" width="25" height="24"/>
+                                                        <rect key="frame" x="0.0" y="-1.5" width="25" height="29.5"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="1PY-za-AIM"/>
-                                                            <constraint firstAttribute="height" constant="25" id="Kh7-FA-pPp"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What to wear today?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ork-uL-vKP">
-                                                        <rect key="frame" x="37" y="0.0" width="231" height="25"/>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="25"/>
+                                                        <rect key="frame" x="37" y="0.0" width="240.5" height="30.5"/>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="26"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -136,23 +79,94 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m4M-Mo-xtc">
+                                <rect key="frame" x="20" y="683.5" width="207.5" height="88.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-7P-2j8">
+                                        <rect key="frame" x="0.0" y="0.0" width="207.5" height="16.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.10957475140681826" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pristina" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frE-1l-XVn">
+                                        <rect key="frame" x="0.0" y="16.5" width="207.5" height="72"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="62"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eXl-6Z-mdn">
+                                <rect key="frame" x="30" y="230" width="113.5" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbb-l9-oF2">
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="84"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="72"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: 17°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rv4-PV-oDB">
+                                        <rect key="frame" x="0.0" y="92" width="113.5" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aI-iR-pkf" userLabel="footerView" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0g-6s-AKs">
+                                        <rect key="frame" x="101" y="12.5" width="212" height="35"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="19"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Are you going to travel?">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="tpu-8v-E2g" kind="show" id="wxV-dX-Nuj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Gji-pV-1ZP"/>
+                                    <constraint firstItem="m0g-6s-AKs" firstAttribute="centerY" secondItem="3aI-iR-pkf" secondAttribute="centerY" id="Qdw-zq-gNf"/>
+                                    <constraint firstItem="m0g-6s-AKs" firstAttribute="centerX" secondItem="3aI-iR-pkf" secondAttribute="centerX" id="dru-11-okU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="topRightCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomLeftCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="bottomRightCorner" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.93699997660000001" green="0.23899999259999999" blue="0.19200000170000001" alpha="0.77765447440000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="xbb-l9-oF2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4aI-9V-6Iw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iU5-7P-2j8" secondAttribute="bottom" constant="90" id="63g-dR-qgd"/>
+                            <constraint firstItem="m4M-Mo-xtc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6do-Qe-6YR"/>
+                            <constraint firstItem="eXl-6Z-mdn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7TY-Mt-07e"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BAj-Xp-cOR"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BaH-Wl-Sao"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EgE-oy-XJD"/>
                             <constraint firstItem="sNw-Mu-p7k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q51-mD-68L"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tya-LS-wq6"/>
-                            <constraint firstItem="Rv4-PV-oDB" firstAttribute="top" secondItem="xbb-l9-oF2" secondAttribute="bottom" constant="8" id="W3i-eL-j5x"/>
+                            <constraint firstItem="3aI-iR-pkf" firstAttribute="top" secondItem="m4M-Mo-xtc" secondAttribute="bottom" constant="30" id="Uvx-OI-xcW"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wi2-H0-47S"/>
                             <constraint firstItem="sNw-Mu-p7k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c9M-d1-VrO"/>
-                            <constraint firstItem="Rv4-PV-oDB" firstAttribute="leading" secondItem="xbb-l9-oF2" secondAttribute="leading" id="diu-48-lGD"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iMa-lm-hMF"/>
-                            <constraint firstItem="xbb-l9-oF2" firstAttribute="top" secondItem="sNw-Mu-p7k" secondAttribute="bottom" constant="106" id="ioD-nI-TBS"/>
-                            <constraint firstItem="iU5-7P-2j8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jjB-Xq-osG"/>
+                            <constraint firstItem="eXl-6Z-mdn" firstAttribute="top" secondItem="sNw-Mu-p7k" secondAttribute="bottom" constant="106" id="k4u-ey-iNQ"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kEP-6S-i51"/>
                             <constraint firstItem="sNw-Mu-p7k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="o4w-WA-tdE"/>
                         </constraints>
@@ -248,24 +262,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2me-N0-fli" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-MA-rwT">
-                                        <rect key="frame" x="129" y="14" width="156.5" height="32"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-MA-rwT">
+                                        <rect key="frame" x="132.5" y="12.5" width="149" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-ho-gn9">
-                                                <rect key="frame" x="0.0" y="0.0" width="133" height="32"/>
-                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Choose your city">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-TJ-n9b">
-                                                <rect key="frame" x="137" y="5" width="19.5" height="22"/>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="arrow.right" catalog="system">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9lI-y4-6bL">
+                                                <rect key="frame" x="0.0" y="0.0" width="149" height="35"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-ho-gn9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="1rJ-oQ-aJU"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="19"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Choose your city">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yS9-c3-aQK">
+                                                        <rect key="frame" x="0.0" y="22" width="149" height="13"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="13" id="CZ1-k6-Y6H"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="11"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Search or tap on map">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -348,9 +374,7 @@
     </scenes>
     <resources>
         <image name="afternoon_wallpaper" width="1125" height="2436"/>
-        <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="back_black_icon" width="24" height="24"/>
-        <image name="car" catalog="system" width="64" height="46"/>
         <image name="cloud.sun" catalog="system" width="64" height="44"/>
         <image name="navigation_black_icon" width="96" height="96"/>
     </resources>
