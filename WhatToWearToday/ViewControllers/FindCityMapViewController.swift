@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate {
+class FindCityMapViewController: UIViewController {
+
+    // MARK: - Outlets
+
+    @IBOutlet weak var searchCityTextField: UITextField!
+    @IBOutlet weak var mapView: MKMapView!
 
     // MARK: - View life cycle
 
@@ -16,5 +22,10 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    // MARK: - Actions
+    
+    @IBAction func locateMeButtonPressed(_ sender: Any) {
     }
 }

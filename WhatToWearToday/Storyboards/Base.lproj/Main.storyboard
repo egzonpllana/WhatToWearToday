@@ -160,6 +160,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mua-lM-z3P"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="iU5-7P-2j8" id="2JU-zW-QB4"/>
+                        <outlet property="dateLabel" destination="rlg-Eb-XN2" id="Hbx-WG-fNk"/>
+                        <outlet property="dayLabel" destination="BK3-BV-Vw7" id="T1i-JN-AR5"/>
+                        <outlet property="tempFeelsLikeLabel" destination="Rv4-PV-oDB" id="a7L-GY-NfC"/>
+                        <outlet property="temperatureLabel" destination="xbb-l9-oF2" id="p90-OE-cId"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -234,6 +241,9 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="navigation_black_icon"/>
+                                <connections>
+                                    <action selector="locateMeButtonPressed:" destination="tpu-8v-E2g" eventType="touchUpInside" id="nth-wu-zYh"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2me-N0-fli" customClass="UIRoundedView" customModule="WhatToWearToday" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
@@ -298,10 +308,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7i8-5n-EW7">
                                 <rect key="frame" x="20" y="0.0" width="62" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="3Hi-XD-AgQ"/>
-                                    <constraint firstAttribute="width" constant="31" id="fEs-qy-Rys"/>
-                                </constraints>
+                                <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="back_black_icon"/>
                                 <connections>
                                     <segue destination="VHP-lF-nVJ" kind="unwind" unwindAction="prepareForUnwindToHome:" id="Mgg-KB-Ovp"/>
@@ -310,6 +317,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="bTU-IX-X5W" id="Xul-pA-NsS"/>
+                        <outlet property="searchCityTextField" destination="opN-01-v8Z" id="CkH-z3-VcF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSo-rJ-SnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="VHP-lF-nVJ" userLabel="Exit" sceneMemberID="exit"/>
