@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F5830090C2E611C1EE50A412DA59075"
-               BuildableName = "Pods-WhatToWearToday.framework"
-               BlueprintName = "Pods-WhatToWearToday"
+               BlueprintIdentifier = "A77DC3FBE3DFD1D1CA8D8812A6CF0776"
+               BuildableName = "SwiftLocation.framework"
+               BlueprintName = "SwiftLocation"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

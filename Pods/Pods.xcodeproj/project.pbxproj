@@ -7,103 +7,265 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4129E9081ED694E72C620E43F424BF37 /* Pods-WhatToWearToday-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45876110DD75E69CDA1662D614296C5F /* Pods-WhatToWearToday-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		924F138FB4A4BFC25C9B5095B6AA8468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		C2503FA45BF480EE9B35124895557B2E /* Pods-WhatToWearToday-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4209E5C0F862B89C56EC95D616C7534 /* Pods-WhatToWearToday-dummy.m */; };
+		00FFD8ADC30BA3D06088F9899F662424 /* AutoComplete+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60600CC340F6CD462AEB52BC2672F9EC /* AutoComplete+Support.swift */; };
+		087C3587086EE596ACCAB8898932ECD8 /* Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F204519D5FA871C5B3F46E864E395097 /* Observers.swift */; };
+		0CA9942B45A746675912FD54A495C886 /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB42AB8D5979DDB82596D2A327A3521 /* Support.swift */; };
+		0D5B34134DBE90BE7EF4952EC05631C1 /* PlaceMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06869526C75FB74DB6C21B66B97EA6A2 /* PlaceMatch.swift */; };
+		0F1DC05188F301E721DE2D5BFE4B43ED /* IPPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761CD3C86F5F1CD6E5B96893C8DB0A4A /* IPPlace.swift */; };
+		1E3C3EE31EFCE967BCC6ED003AF1D0AF /* GoogleAutoCompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4338954C7236D72CD684C7675991EF7 /* GoogleAutoCompleteRequest.swift */; };
+		1F98F8CA3A615DCEB242684160B7A00A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E577877E8D65DE6B7620EC67BCB4E973 /* LocationManager.swift */; };
+		21D29AD3D75D1AF3036B783E2D168D6D /* SwiftLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9141FD3BE589437CE0B77485F1417FB9 /* SwiftLocation-dummy.m */; };
+		2433AE4A319102C4C6D8494A79881EC8 /* LocationByIPRequest+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664426D18A1A8A5776CEFDE810F037AF /* LocationByIPRequest+Support.swift */; };
+		2D0F1CC893E47E7561029ABDC93A5A00 /* AutoCompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B94AD8CD88EB49A41687EC74EDFA98D /* AutoCompleteRequest.swift */; };
+		32EBE7D838A5BCE80A8AFB5B18E2DD76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085D389EFFB4AAA260A381BE5B934744 /* CoreLocation.framework */; };
+		3FC67FDA1CECAF0F38B04F4DD38872B7 /* LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D4512CBFA3006C4369B9377FB4983 /* LocationRequest.swift */; };
+		45717F0132A07B5B1B0B99CFCA78169A /* AppleGeocoderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F82D0D56FDB01644EB04BA0E6647EB /* AppleGeocoderRequest.swift */; };
+		4EA88A9DA32F42DBEADEF7782206D219 /* BeaconsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52173024D7FD93CB3E4B0C62A8AF40C0 /* BeaconsRequest.swift */; };
+		526142AF564F67224962CE05F147E04F /* IPAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BE2AEE97E6AA5B49D82512A83513A1 /* IPAPIRequest.swift */; };
+		528194334716DCA08B1E3AE3273849DA /* Pods-WhatToWearToday-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46D88DF58F2CC4D4331B4E2AB12EBA5 /* Pods-WhatToWearToday-dummy.m */; };
+		553D36441A4B13B909B4283CEADE9F3F /* SwiftLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A14FF68E6596AA43F56FA9FDCAB8EFF6 /* SwiftLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56E4B50A58AD885E3CAD522CD3185DE9 /* Pods-WhatToWearToday-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ADF5B0B8364DA4A1149C6ECC9419A3C5 /* Pods-WhatToWearToday-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5783B7F0079AD2CCC55915D143F39283 /* IPAPICoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB63A3BCCFD6C652933427F777B538 /* IPAPICoRequest.swift */; };
+		5B3B4A6A696A32172C74E359227D938C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E807DDE01D5A8CD9877D81CB2FD888EE /* Foundation.framework */; };
+		5BFFB56A0C2237866F39CED0F8AAD977 /* JSONOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B2FDFB28186DF420594D6AD62DCD /* JSONOperation.swift */; };
+		64319DAACAB1C3D2BB29D834D8B352DC /* CLLocationManager+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA50122F6214F132BB997F976A389398 /* CLLocationManager+Extras.swift */; };
+		704E4FC2D7894547751E0AC722952C85 /* OpenStreetGeocoderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6ADBE4A52BB49E8FCC79AFFE64E64 /* OpenStreetGeocoderRequest.swift */; };
+		7292F49200E9A6ECCB478FF68D4F3C4D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4741BCA927FEAFF51953EB523790431 /* Place.swift */; };
+		802BAED0F84E8DA4B69CF3B46186189E /* GeocoderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E696164630278EA4D88F1B0A02638D40 /* GeocoderRequest.swift */; };
+		8E15F2B7310921A52BDC452FD8D4B15F /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A19D4EEF15F1959DF57FF317E53FB9 /* Timeout.swift */; };
+		971652840D058A4A83882B4DDAEA58A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E807DDE01D5A8CD9877D81CB2FD888EE /* Foundation.framework */; };
+		B61E34BC509ECB7D321E49E37F3F2BC2 /* HeadingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7335F1E0B221D7C2AEA7F294B5D56 /* HeadingRequest.swift */; };
+		BBC347D6BBF39403E23E786D30940D78 /* GoogleGeocoderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB44FE8A92A41F09A579BB50BA14290 /* GoogleGeocoderRequest.swift */; };
+		C25D8296151FFC4433A4104403B67CCA /* AppleAutoCompleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88671FC4920D3DE9BC21E693941F6ED9 /* AppleAutoCompleteRequest.swift */; };
+		C33761AB072D15173945DF3FDFF05EE9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C28EE0808D49573B53E3A4E2CE6624 /* MapKit.framework */; };
+		C3547F575C561CFA3EA2217A65FA6430 /* LocationByIPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34142864D4DC6DF3211205D43C92706 /* LocationByIPRequest.swift */; };
+		D2E8B327C0FC0EFEDC7DA214455AF25C /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AD51139ECB80EE067D776A1A3A46C1 /* ServiceRequest.swift */; };
+		D82ED0685DDA7CBDBBB649F9C7676FBA /* Geocoder+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B402FDE4E53C503B6A5D88F7B8A75 /* Geocoder+Support.swift */; };
+		D9EF7D7219FA75EB42063AE684144092 /* LocationManager+Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2188A4C1E58E551642C3CA79E963D030 /* LocationManager+Support.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F7AEC85F1EAF5F507887AE0EC85B5432 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A77DC3FBE3DFD1D1CA8D8812A6CF0776;
+			remoteInfo = SwiftLocation;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		2D78A19FA2B97335B1CBBFDE0324BC14 /* Pods-WhatToWearToday.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WhatToWearToday.modulemap"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		45876110DD75E69CDA1662D614296C5F /* Pods-WhatToWearToday-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WhatToWearToday-umbrella.h"; sourceTree = "<group>"; };
-		769406D809148E9BDEC744B7E286475A /* Pods-WhatToWearToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhatToWearToday.debug.xcconfig"; sourceTree = "<group>"; };
-		885F9DB00D29529B36B668F7421F28D7 /* Pods-WhatToWearToday-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhatToWearToday-acknowledgements.plist"; sourceTree = "<group>"; };
+		06869526C75FB74DB6C21B66B97EA6A2 /* PlaceMatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaceMatch.swift; path = "Sources/SwiftLocation/Data Models/PlaceMatch.swift"; sourceTree = "<group>"; };
+		085D389EFFB4AAA260A381BE5B934744 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		08F82D0D56FDB01644EB04BA0E6647EB /* AppleGeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleGeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/Services/AppleGeocoderRequest.swift; sourceTree = "<group>"; };
+		0CB7FC8DCDCB369EAF922F6F4E526E57 /* Pods-WhatToWearToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhatToWearToday.debug.xcconfig"; sourceTree = "<group>"; };
+		10A495C6A9BF7290B16D91372AF77559 /* Pods-WhatToWearToday-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhatToWearToday-acknowledgements.plist"; sourceTree = "<group>"; };
+		10ECC89A9B644728907057D24920758B /* SwiftLocation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftLocation-Info.plist"; sourceTree = "<group>"; };
+		138753B0FDF9063AD193DD18C36A6ED1 /* Pods-WhatToWearToday-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WhatToWearToday-frameworks.sh"; sourceTree = "<group>"; };
+		2188A4C1E58E551642C3CA79E963D030 /* LocationManager+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LocationManager+Support.swift"; path = "Sources/SwiftLocation/LocationManager+Support.swift"; sourceTree = "<group>"; };
+		2DB42AB8D5979DDB82596D2A327A3521 /* Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Support.swift; path = Sources/SwiftLocation/Support/Support.swift; sourceTree = "<group>"; };
+		323B2010628D69810C5F3C7FB2FC38AA /* Pods-WhatToWearToday-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhatToWearToday-Info.plist"; sourceTree = "<group>"; };
+		4C678B4A8CAADE71D75DA8311295097A /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftLocation.framework; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC6ADBE4A52BB49E8FCC79AFFE64E64 /* OpenStreetGeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenStreetGeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/Services/OpenStreetGeocoderRequest.swift; sourceTree = "<group>"; };
+		52173024D7FD93CB3E4B0C62A8AF40C0 /* BeaconsRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeaconsRequest.swift; path = Sources/SwiftLocation/Beacons/BeaconsRequest.swift; sourceTree = "<group>"; };
+		58F9B2FDFB28186DF420594D6AD62DCD /* JSONOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONOperation.swift; path = Sources/SwiftLocation/Support/JSONOperation.swift; sourceTree = "<group>"; };
+		60600CC340F6CD462AEB52BC2672F9EC /* AutoComplete+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AutoComplete+Support.swift"; path = "Sources/SwiftLocation/Auto Complete/AutoComplete+Support.swift"; sourceTree = "<group>"; };
+		664426D18A1A8A5776CEFDE810F037AF /* LocationByIPRequest+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "LocationByIPRequest+Support.swift"; path = "Sources/SwiftLocation/Locating By IP/LocationByIPRequest+Support.swift"; sourceTree = "<group>"; };
+		73CB63A3BCCFD6C652933427F777B538 /* IPAPICoRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPAPICoRequest.swift; path = "Sources/SwiftLocation/Locating By IP/Services/IPAPICoRequest.swift"; sourceTree = "<group>"; };
+		761CD3C86F5F1CD6E5B96893C8DB0A4A /* IPPlace.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPPlace.swift; path = "Sources/SwiftLocation/Data Models/IPPlace.swift"; sourceTree = "<group>"; };
+		84C28EE0808D49573B53E3A4E2CE6624 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		88671FC4920D3DE9BC21E693941F6ED9 /* AppleAutoCompleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleAutoCompleteRequest.swift; path = "Sources/SwiftLocation/Auto Complete/Services/AppleAutoCompleteRequest.swift"; sourceTree = "<group>"; };
+		9141FD3BE589437CE0B77485F1417FB9 /* SwiftLocation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftLocation-dummy.m"; sourceTree = "<group>"; };
+		9B94AD8CD88EB49A41687EC74EDFA98D /* AutoCompleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoCompleteRequest.swift; path = "Sources/SwiftLocation/Auto Complete/AutoCompleteRequest.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A4209E5C0F862B89C56EC95D616C7534 /* Pods-WhatToWearToday-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WhatToWearToday-dummy.m"; sourceTree = "<group>"; };
+		A14FF68E6596AA43F56FA9FDCAB8EFF6 /* SwiftLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftLocation-umbrella.h"; sourceTree = "<group>"; };
+		A34142864D4DC6DF3211205D43C92706 /* LocationByIPRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationByIPRequest.swift; path = "Sources/SwiftLocation/Locating By IP/LocationByIPRequest.swift"; sourceTree = "<group>"; };
+		A3BE2AEE97E6AA5B49D82512A83513A1 /* IPAPIRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPAPIRequest.swift; path = "Sources/SwiftLocation/Locating By IP/Services/IPAPIRequest.swift"; sourceTree = "<group>"; };
+		A4338954C7236D72CD684C7675991EF7 /* GoogleAutoCompleteRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoogleAutoCompleteRequest.swift; path = "Sources/SwiftLocation/Auto Complete/Services/GoogleAutoCompleteRequest.swift"; sourceTree = "<group>"; };
 		A4D4A05D6E9686395F45840FA6C6756E /* Pods_WhatToWearToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WhatToWearToday.framework; path = "Pods-WhatToWearToday.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5777F3C876192635232DF133CC07204 /* Pods-WhatToWearToday-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WhatToWearToday-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B85E56BD8E133944BFEB52D0A38FEF7F /* Pods-WhatToWearToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhatToWearToday.release.xcconfig"; sourceTree = "<group>"; };
-		E1FD79147FEA0A78DE9B8193F7FE7660 /* Pods-WhatToWearToday-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-WhatToWearToday-Info.plist"; sourceTree = "<group>"; };
+		A82EFEEABDFB25FF740F371F32B7325F /* Pods-WhatToWearToday-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WhatToWearToday-acknowledgements.markdown"; sourceTree = "<group>"; };
+		AA50122F6214F132BB997F976A389398 /* CLLocationManager+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CLLocationManager+Extras.swift"; path = "Sources/SwiftLocation/Support/CLLocationManager+Extras.swift"; sourceTree = "<group>"; };
+		AAB44FE8A92A41F09A579BB50BA14290 /* GoogleGeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GoogleGeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/Services/GoogleGeocoderRequest.swift; sourceTree = "<group>"; };
+		ADF5B0B8364DA4A1149C6ECC9419A3C5 /* Pods-WhatToWearToday-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WhatToWearToday-umbrella.h"; sourceTree = "<group>"; };
+		AE6B317014B90C9C02B5C27195769245 /* SwiftLocation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftLocation-prefix.pch"; sourceTree = "<group>"; };
+		B6AC6FAC11DB2769DA4623EDD014F2FC /* SwiftLocation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLocation.debug.xcconfig; sourceTree = "<group>"; };
+		C4741BCA927FEAFF51953EB523790431 /* Place.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Place.swift; path = "Sources/SwiftLocation/Data Models/Place.swift"; sourceTree = "<group>"; };
+		C7168FCF584CBF4C6D45D1842E9A6A2A /* Pods-WhatToWearToday.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-WhatToWearToday.modulemap"; sourceTree = "<group>"; };
+		CCCCB08A7E15B7A0890A58139E1B3FED /* SwiftLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftLocation.modulemap; sourceTree = "<group>"; };
+		D46B402FDE4E53C503B6A5D88F7B8A75 /* Geocoder+Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Geocoder+Support.swift"; path = "Sources/SwiftLocation/Geocoding/Geocoder+Support.swift"; sourceTree = "<group>"; };
+		D7A19D4EEF15F1959DF57FF317E53FB9 /* Timeout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeout.swift; path = Sources/SwiftLocation/Support/Timeout.swift; sourceTree = "<group>"; };
+		DBE7335F1E0B221D7C2AEA7F294B5D56 /* HeadingRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeadingRequest.swift; path = Sources/SwiftLocation/Heading/HeadingRequest.swift; sourceTree = "<group>"; };
+		DBEE87813FF40AC80A2A026923A41D41 /* Pods-WhatToWearToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WhatToWearToday.release.xcconfig"; sourceTree = "<group>"; };
+		E46D88DF58F2CC4D4331B4E2AB12EBA5 /* Pods-WhatToWearToday-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WhatToWearToday-dummy.m"; sourceTree = "<group>"; };
+		E577877E8D65DE6B7620EC67BCB4E973 /* LocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Sources/SwiftLocation/LocationManager.swift; sourceTree = "<group>"; };
+		E696164630278EA4D88F1B0A02638D40 /* GeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeocoderRequest.swift; path = Sources/SwiftLocation/Geocoding/GeocoderRequest.swift; sourceTree = "<group>"; };
+		E7458FA365FA8678062D1713120C1F56 /* SwiftLocation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLocation.release.xcconfig; sourceTree = "<group>"; };
+		E807DDE01D5A8CD9877D81CB2FD888EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF9D4512CBFA3006C4369B9377FB4983 /* LocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationRequest.swift; path = Sources/SwiftLocation/Locating/LocationRequest.swift; sourceTree = "<group>"; };
+		F204519D5FA871C5B3F46E864E395097 /* Observers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Observers.swift; path = "Sources/SwiftLocation/Data Models/Observers.swift"; sourceTree = "<group>"; };
+		F7AD51139ECB80EE067D776A1A3A46C1 /* ServiceRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServiceRequest.swift; path = Sources/SwiftLocation/ServiceRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7B7A70DC1196E88B42002E8E28B67993 /* Frameworks */ = {
+		3650380B13B32C73233EB19C9FB765EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924F138FB4A4BFC25C9B5095B6AA8468 /* Foundation.framework in Frameworks */,
+				971652840D058A4A83882B4DDAEA58A3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63748E974876B41E4DA5D85D8E301C13 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32EBE7D838A5BCE80A8AFB5B18E2DD76 /* CoreLocation.framework in Frameworks */,
+				5B3B4A6A696A32172C74E359227D938C /* Foundation.framework in Frameworks */,
+				C33761AB072D15173945DF3FDFF05EE9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40AF7983F64E5C6D6BC7ACCA488D3198 /* Pods-WhatToWearToday */ = {
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2D78A19FA2B97335B1CBBFDE0324BC14 /* Pods-WhatToWearToday.modulemap */,
-				B5777F3C876192635232DF133CC07204 /* Pods-WhatToWearToday-acknowledgements.markdown */,
-				885F9DB00D29529B36B668F7421F28D7 /* Pods-WhatToWearToday-acknowledgements.plist */,
-				A4209E5C0F862B89C56EC95D616C7534 /* Pods-WhatToWearToday-dummy.m */,
-				E1FD79147FEA0A78DE9B8193F7FE7660 /* Pods-WhatToWearToday-Info.plist */,
-				45876110DD75E69CDA1662D614296C5F /* Pods-WhatToWearToday-umbrella.h */,
-				769406D809148E9BDEC744B7E286475A /* Pods-WhatToWearToday.debug.xcconfig */,
-				B85E56BD8E133944BFEB52D0A38FEF7F /* Pods-WhatToWearToday.release.xcconfig */,
+				4D3D54A8B129BC62B8492BDBFC04275A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09E2EA1E7F735EF9DAABE9B877C3BFF0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				723FE41B381D14949D4C8AD42E6CC6D9 /* Pods-WhatToWearToday */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4BB3DB1C59E61CA4BE0A7AC570EEB6F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCCCB08A7E15B7A0890A58139E1B3FED /* SwiftLocation.modulemap */,
+				9141FD3BE589437CE0B77485F1417FB9 /* SwiftLocation-dummy.m */,
+				10ECC89A9B644728907057D24920758B /* SwiftLocation-Info.plist */,
+				AE6B317014B90C9C02B5C27195769245 /* SwiftLocation-prefix.pch */,
+				A14FF68E6596AA43F56FA9FDCAB8EFF6 /* SwiftLocation-umbrella.h */,
+				B6AC6FAC11DB2769DA4623EDD014F2FC /* SwiftLocation.debug.xcconfig */,
+				E7458FA365FA8678062D1713120C1F56 /* SwiftLocation.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLocation";
+			sourceTree = "<group>";
+		};
+		4D3D54A8B129BC62B8492BDBFC04275A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				085D389EFFB4AAA260A381BE5B934744 /* CoreLocation.framework */,
+				E807DDE01D5A8CD9877D81CB2FD888EE /* Foundation.framework */,
+				84C28EE0808D49573B53E3A4E2CE6624 /* MapKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6194C0E0ECD8AD0C12EBDCFA0D517C1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				690B1995092C8C4F6982DE0D26367575 /* SwiftLocation */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		690B1995092C8C4F6982DE0D26367575 /* SwiftLocation */ = {
+			isa = PBXGroup;
+			children = (
+				88671FC4920D3DE9BC21E693941F6ED9 /* AppleAutoCompleteRequest.swift */,
+				08F82D0D56FDB01644EB04BA0E6647EB /* AppleGeocoderRequest.swift */,
+				60600CC340F6CD462AEB52BC2672F9EC /* AutoComplete+Support.swift */,
+				9B94AD8CD88EB49A41687EC74EDFA98D /* AutoCompleteRequest.swift */,
+				52173024D7FD93CB3E4B0C62A8AF40C0 /* BeaconsRequest.swift */,
+				AA50122F6214F132BB997F976A389398 /* CLLocationManager+Extras.swift */,
+				D46B402FDE4E53C503B6A5D88F7B8A75 /* Geocoder+Support.swift */,
+				E696164630278EA4D88F1B0A02638D40 /* GeocoderRequest.swift */,
+				A4338954C7236D72CD684C7675991EF7 /* GoogleAutoCompleteRequest.swift */,
+				AAB44FE8A92A41F09A579BB50BA14290 /* GoogleGeocoderRequest.swift */,
+				DBE7335F1E0B221D7C2AEA7F294B5D56 /* HeadingRequest.swift */,
+				73CB63A3BCCFD6C652933427F777B538 /* IPAPICoRequest.swift */,
+				A3BE2AEE97E6AA5B49D82512A83513A1 /* IPAPIRequest.swift */,
+				761CD3C86F5F1CD6E5B96893C8DB0A4A /* IPPlace.swift */,
+				58F9B2FDFB28186DF420594D6AD62DCD /* JSONOperation.swift */,
+				A34142864D4DC6DF3211205D43C92706 /* LocationByIPRequest.swift */,
+				664426D18A1A8A5776CEFDE810F037AF /* LocationByIPRequest+Support.swift */,
+				E577877E8D65DE6B7620EC67BCB4E973 /* LocationManager.swift */,
+				2188A4C1E58E551642C3CA79E963D030 /* LocationManager+Support.swift */,
+				EF9D4512CBFA3006C4369B9377FB4983 /* LocationRequest.swift */,
+				F204519D5FA871C5B3F46E864E395097 /* Observers.swift */,
+				4CC6ADBE4A52BB49E8FCC79AFFE64E64 /* OpenStreetGeocoderRequest.swift */,
+				C4741BCA927FEAFF51953EB523790431 /* Place.swift */,
+				06869526C75FB74DB6C21B66B97EA6A2 /* PlaceMatch.swift */,
+				F7AD51139ECB80EE067D776A1A3A46C1 /* ServiceRequest.swift */,
+				2DB42AB8D5979DDB82596D2A327A3521 /* Support.swift */,
+				D7A19D4EEF15F1959DF57FF317E53FB9 /* Timeout.swift */,
+				4BB3DB1C59E61CA4BE0A7AC570EEB6F5 /* Support Files */,
+			);
+			name = SwiftLocation;
+			path = SwiftLocation;
+			sourceTree = "<group>";
+		};
+		723FE41B381D14949D4C8AD42E6CC6D9 /* Pods-WhatToWearToday */ = {
+			isa = PBXGroup;
+			children = (
+				C7168FCF584CBF4C6D45D1842E9A6A2A /* Pods-WhatToWearToday.modulemap */,
+				A82EFEEABDFB25FF740F371F32B7325F /* Pods-WhatToWearToday-acknowledgements.markdown */,
+				10A495C6A9BF7290B16D91372AF77559 /* Pods-WhatToWearToday-acknowledgements.plist */,
+				E46D88DF58F2CC4D4331B4E2AB12EBA5 /* Pods-WhatToWearToday-dummy.m */,
+				138753B0FDF9063AD193DD18C36A6ED1 /* Pods-WhatToWearToday-frameworks.sh */,
+				323B2010628D69810C5F3C7FB2FC38AA /* Pods-WhatToWearToday-Info.plist */,
+				ADF5B0B8364DA4A1149C6ECC9419A3C5 /* Pods-WhatToWearToday-umbrella.h */,
+				0CB7FC8DCDCB369EAF922F6F4E526E57 /* Pods-WhatToWearToday.debug.xcconfig */,
+				DBEE87813FF40AC80A2A026923A41D41 /* Pods-WhatToWearToday.release.xcconfig */,
 			);
 			name = "Pods-WhatToWearToday";
 			path = "Target Support Files/Pods-WhatToWearToday";
 			sourceTree = "<group>";
 		};
-		7C0276EF37452F748408FD5B94F4CAEF /* Products */ = {
+		8B4E4E840029DE8A2FC1D368CD060F7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				A4D4A05D6E9686395F45840FA6C6756E /* Pods_WhatToWearToday.framework */,
+				4C678B4A8CAADE71D75DA8311295097A /* SwiftLocation.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				7C0276EF37452F748408FD5B94F4CAEF /* Products */,
-				FB3B64F5A46CB0D64474D04A6C35918D /* Targets Support Files */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				6194C0E0ECD8AD0C12EBDCFA0D517C1C /* Pods */,
+				8B4E4E840029DE8A2FC1D368CD060F7C /* Products */,
+				09E2EA1E7F735EF9DAABE9B877C3BFF0 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FB3B64F5A46CB0D64474D04A6C35918D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				40AF7983F64E5C6D6BC7ACCA488D3198 /* Pods-WhatToWearToday */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		717B0F86FEA83EF21BF5C0FC7D6034D5 /* Headers */ = {
+		52E36BF3DBA1CDA5B8A557910669E196 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4129E9081ED694E72C620E43F424BF37 /* Pods-WhatToWearToday-umbrella.h in Headers */,
+				553D36441A4B13B909B4283CEADE9F3F /* SwiftLocation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EAAE6B3157324FD126928E0F7675444 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E4B50A58AD885E3CAD522CD3185DE9 /* Pods-WhatToWearToday-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,20 +274,39 @@
 /* Begin PBXNativeTarget section */
 		0F5830090C2E611C1EE50A412DA59075 /* Pods-WhatToWearToday */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A68F6DC7ABA0CA74C4EAE4D6C660C611 /* Build configuration list for PBXNativeTarget "Pods-WhatToWearToday" */;
+			buildConfigurationList = E81E0D5080E6066CFDAF774DC969ED7E /* Build configuration list for PBXNativeTarget "Pods-WhatToWearToday" */;
 			buildPhases = (
-				717B0F86FEA83EF21BF5C0FC7D6034D5 /* Headers */,
-				6A38FFDAE5CAD8E16C4987D8113683C9 /* Sources */,
-				7B7A70DC1196E88B42002E8E28B67993 /* Frameworks */,
-				2B6DC21C132E49B1D30DB8D85CDD90A8 /* Resources */,
+				5EAAE6B3157324FD126928E0F7675444 /* Headers */,
+				42680D585DD18EB96FCEB77BAE574D92 /* Sources */,
+				3650380B13B32C73233EB19C9FB765EE /* Frameworks */,
+				0168803FD4A85756208C9570290C5346 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B4014F4BF99D244A4039F30012741CA /* PBXTargetDependency */,
+			);
+			name = "Pods-WhatToWearToday";
+			productName = "Pods-WhatToWearToday";
+			productReference = A4D4A05D6E9686395F45840FA6C6756E /* Pods_WhatToWearToday.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A77DC3FBE3DFD1D1CA8D8812A6CF0776 /* SwiftLocation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D447AE35AA19445017E8DE47CD4DD73 /* Build configuration list for PBXNativeTarget "SwiftLocation" */;
+			buildPhases = (
+				52E36BF3DBA1CDA5B8A557910669E196 /* Headers */,
+				68F400A5A7640306E39C5B8C6EA11E0D /* Sources */,
+				63748E974876B41E4DA5D85D8E301C13 /* Frameworks */,
+				3D7A9121995D9405423D2CB4B64098B6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-WhatToWearToday";
-			productName = "Pods-WhatToWearToday";
-			productReference = A4D4A05D6E9686395F45840FA6C6756E /* Pods_WhatToWearToday.framework */;
+			name = SwiftLocation;
+			productName = SwiftLocation;
+			productReference = 4C678B4A8CAADE71D75DA8311295097A /* SwiftLocation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -146,17 +327,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7C0276EF37452F748408FD5B94F4CAEF /* Products */;
+			productRefGroup = 8B4E4E840029DE8A2FC1D368CD060F7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0F5830090C2E611C1EE50A412DA59075 /* Pods-WhatToWearToday */,
+				A77DC3FBE3DFD1D1CA8D8812A6CF0776 /* SwiftLocation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B6DC21C132E49B1D30DB8D85CDD90A8 /* Resources */ = {
+		0168803FD4A85756208C9570290C5346 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D7A9121995D9405423D2CB4B64098B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,20 +355,137 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6A38FFDAE5CAD8E16C4987D8113683C9 /* Sources */ = {
+		42680D585DD18EB96FCEB77BAE574D92 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2503FA45BF480EE9B35124895557B2E /* Pods-WhatToWearToday-dummy.m in Sources */,
+				528194334716DCA08B1E3AE3273849DA /* Pods-WhatToWearToday-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F400A5A7640306E39C5B8C6EA11E0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C25D8296151FFC4433A4104403B67CCA /* AppleAutoCompleteRequest.swift in Sources */,
+				45717F0132A07B5B1B0B99CFCA78169A /* AppleGeocoderRequest.swift in Sources */,
+				00FFD8ADC30BA3D06088F9899F662424 /* AutoComplete+Support.swift in Sources */,
+				2D0F1CC893E47E7561029ABDC93A5A00 /* AutoCompleteRequest.swift in Sources */,
+				4EA88A9DA32F42DBEADEF7782206D219 /* BeaconsRequest.swift in Sources */,
+				64319DAACAB1C3D2BB29D834D8B352DC /* CLLocationManager+Extras.swift in Sources */,
+				D82ED0685DDA7CBDBBB649F9C7676FBA /* Geocoder+Support.swift in Sources */,
+				802BAED0F84E8DA4B69CF3B46186189E /* GeocoderRequest.swift in Sources */,
+				1E3C3EE31EFCE967BCC6ED003AF1D0AF /* GoogleAutoCompleteRequest.swift in Sources */,
+				BBC347D6BBF39403E23E786D30940D78 /* GoogleGeocoderRequest.swift in Sources */,
+				B61E34BC509ECB7D321E49E37F3F2BC2 /* HeadingRequest.swift in Sources */,
+				5783B7F0079AD2CCC55915D143F39283 /* IPAPICoRequest.swift in Sources */,
+				526142AF564F67224962CE05F147E04F /* IPAPIRequest.swift in Sources */,
+				0F1DC05188F301E721DE2D5BFE4B43ED /* IPPlace.swift in Sources */,
+				5BFFB56A0C2237866F39CED0F8AAD977 /* JSONOperation.swift in Sources */,
+				2433AE4A319102C4C6D8494A79881EC8 /* LocationByIPRequest+Support.swift in Sources */,
+				C3547F575C561CFA3EA2217A65FA6430 /* LocationByIPRequest.swift in Sources */,
+				D9EF7D7219FA75EB42063AE684144092 /* LocationManager+Support.swift in Sources */,
+				1F98F8CA3A615DCEB242684160B7A00A /* LocationManager.swift in Sources */,
+				3FC67FDA1CECAF0F38B04F4DD38872B7 /* LocationRequest.swift in Sources */,
+				087C3587086EE596ACCAB8898932ECD8 /* Observers.swift in Sources */,
+				704E4FC2D7894547751E0AC722952C85 /* OpenStreetGeocoderRequest.swift in Sources */,
+				7292F49200E9A6ECCB478FF68D4F3C4D /* Place.swift in Sources */,
+				0D5B34134DBE90BE7EF4952EC05631C1 /* PlaceMatch.swift in Sources */,
+				D2E8B327C0FC0EFEDC7DA214455AF25C /* ServiceRequest.swift in Sources */,
+				0CA9942B45A746675912FD54A495C886 /* Support.swift in Sources */,
+				21D29AD3D75D1AF3036B783E2D168D6D /* SwiftLocation-dummy.m in Sources */,
+				8E15F2B7310921A52BDC452FD8D4B15F /* Timeout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6B4014F4BF99D244A4039F30012741CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLocation;
+			target = A77DC3FBE3DFD1D1CA8D8812A6CF0776 /* SwiftLocation */;
+			targetProxy = F7AEC85F1EAF5F507887AE0EC85B5432 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		1D77F68D8743764934E6B2C504997C23 /* Debug */ = {
+		106957A1E09B956C8970FD8DA0C598B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 769406D809148E9BDEC744B7E286475A /* Pods-WhatToWearToday.debug.xcconfig */;
+			baseConfigurationReference = E7458FA365FA8678062D1713120C1F56 /* SwiftLocation.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftLocation/SwiftLocation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftLocation/SwiftLocation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftLocation/SwiftLocation.modulemap";
+				PRODUCT_MODULE_NAME = SwiftLocation;
+				PRODUCT_NAME = SwiftLocation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		19438997C23F469996A3EEAF0AC10D49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6AC6FAC11DB2769DA4623EDD014F2FC /* SwiftLocation.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftLocation/SwiftLocation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftLocation/SwiftLocation-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftLocation/SwiftLocation.modulemap";
+				PRODUCT_MODULE_NAME = SwiftLocation;
+				PRODUCT_NAME = SwiftLocation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5CAE7D90273F93C13F95A655FABD4E2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CB7FC8DCDCB369EAF922F6F4E526E57 /* Pods-WhatToWearToday.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -279,9 +585,9 @@
 			};
 			name = Debug;
 		};
-		B453FA04AB393ACADA2B028137CA6899 /* Release */ = {
+		DBF4D1854CD0B1C4E299B7777E27AB10 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B85E56BD8E133944BFEB52D0A38FEF7F /* Pods-WhatToWearToday.release.xcconfig */;
+			baseConfigurationReference = DBEE87813FF40AC80A2A026923A41D41 /* Pods-WhatToWearToday.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -390,11 +696,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A68F6DC7ABA0CA74C4EAE4D6C660C611 /* Build configuration list for PBXNativeTarget "Pods-WhatToWearToday" */ = {
+		8D447AE35AA19445017E8DE47CD4DD73 /* Build configuration list for PBXNativeTarget "SwiftLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D77F68D8743764934E6B2C504997C23 /* Debug */,
-				B453FA04AB393ACADA2B028137CA6899 /* Release */,
+				19438997C23F469996A3EEAF0AC10D49 /* Debug */,
+				106957A1E09B956C8970FD8DA0C598B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E81E0D5080E6066CFDAF774DC969ED7E /* Build configuration list for PBXNativeTarget "Pods-WhatToWearToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CAE7D90273F93C13F95A655FABD4E2E /* Debug */,
+				DBF4D1854CD0B1C4E299B7777E27AB10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

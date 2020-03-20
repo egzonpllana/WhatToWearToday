@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 15e3a288ec2bd6c7d6599c92763e8034d68662b8
+PODS:
+  - SwiftLocation (4.2.0)
+
+DEPENDENCIES:
+  - SwiftLocation
+
+SPEC REPOS:
+  trunk:
+    - SwiftLocation
+
+SPEC CHECKSUMS:
+  SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
+
+PODFILE CHECKSUM: 98bb9c1407536bfbeed71fd677927718ceb2f002
 
 COCOAPODS: 1.9.0

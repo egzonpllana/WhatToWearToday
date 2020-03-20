@@ -6,5 +6,6 @@ target 'WhatToWearToday' do
   use_frameworks!
 
   # Pods for WhatToWearToday
+  pod 'SwiftLocation'
 
 end
