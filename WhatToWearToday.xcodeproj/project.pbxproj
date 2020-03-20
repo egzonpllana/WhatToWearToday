@@ -17,6 +17,14 @@
 		52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB52425139B00762F9A /* HomeViewController.swift */; };
 		52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB9242514E200762F9A /* UIExtendedView.swift */; };
 		52CD4CBC24251AB800762F9A /* FindCityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */; };
+		52CD4CC0242537C800762F9A /* DEPENDENCIES.md in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4CBF242537C800762F9A /* DEPENDENCIES.md */; };
+		52CD4CC2242537E900762F9A /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC1242537E900762F9A /* AppDependency.swift */; };
+		52CD4CC4242537F600762F9A /* CoreDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC3242537F600762F9A /* CoreDependency.swift */; };
+		52CD4CC62425386E00762F9A /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC52425386E00762F9A /* Dependency.swift */; };
+		52CD4CCA242538FF00762F9A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC9242538FF00762F9A /* Result.swift */; };
+		52CD4CCC2425391900762F9A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCB2425391900762F9A /* LocationService.swift */; };
+		52CD4CCE2425392300762F9A /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCD2425392300762F9A /* MockLocationService.swift */; };
+		52CD4CD02425392A00762F9A /* WWLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCF2425392A00762F9A /* WWLocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,14 @@
 		52CD4CB52425139B00762F9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52CD4CB9242514E200762F9A /* UIExtendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendedView.swift; sourceTree = "<group>"; };
 		52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindCityMapViewController.swift; sourceTree = "<group>"; };
+		52CD4CBF242537C800762F9A /* DEPENDENCIES.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DEPENDENCIES.md; sourceTree = "<group>"; };
+		52CD4CC1242537E900762F9A /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
+		52CD4CC3242537F600762F9A /* CoreDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependency.swift; sourceTree = "<group>"; };
+		52CD4CC52425386E00762F9A /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		52CD4CC9242538FF00762F9A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		52CD4CCB2425391900762F9A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		52CD4CCD2425392300762F9A /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
+		52CD4CCF2425392A00762F9A /* WWLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWLocationService.swift; sourceTree = "<group>"; };
 		CC55662C6D33BAF15B9BD1CA /* Pods-WhatToWearToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWearToday.release.xcconfig"; path = "Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday.release.xcconfig"; sourceTree = "<group>"; };
 		CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToWearToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +97,8 @@
 				52CD4C9F2424D7A500762F9A /* Info.plist */,
 				52CD4C912424D7A200762F9A /* AppDelegate.swift */,
 				52CD4C932424D7A200762F9A /* SceneDelegate.swift */,
+				52CD4CC8242538ED00762F9A /* Helpers */,
+				52CD4CBD242537A700762F9A /* Services */,
 				52CD4CAC24250F8200762F9A /* Storyboards */,
 				52CD4CAB24250F7A00762F9A /* ViewControllers */,
 				52CD4CAD24250F8C00762F9A /* GUI */,
@@ -114,6 +132,44 @@
 				52CD4CB324250FFE00762F9A /* UIRoundedView.swift */,
 			);
 			path = GUI;
+			sourceTree = "<group>";
+		};
+		52CD4CBD242537A700762F9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CBE242537B600762F9A /* DependencyContainer */,
+				52CD4CC7242538D000762F9A /* LocationService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		52CD4CBE242537B600762F9A /* DependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CBF242537C800762F9A /* DEPENDENCIES.md */,
+				52CD4CC52425386E00762F9A /* Dependency.swift */,
+				52CD4CC1242537E900762F9A /* AppDependency.swift */,
+				52CD4CC3242537F600762F9A /* CoreDependency.swift */,
+			);
+			path = DependencyContainer;
+			sourceTree = "<group>";
+		};
+		52CD4CC7242538D000762F9A /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CCB2425391900762F9A /* LocationService.swift */,
+				52CD4CCD2425392300762F9A /* MockLocationService.swift */,
+				52CD4CCF2425392A00762F9A /* WWLocationService.swift */,
+			);
+			path = LocationService;
+			sourceTree = "<group>";
+		};
+		52CD4CC8242538ED00762F9A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CC9242538FF00762F9A /* Result.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		944F35CD6A0E75DCEA263752 /* Frameworks */ = {
@@ -152,6 +208,7 @@
 		52CD4C862424D7A200762F9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = WW;
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Native Coders";
@@ -185,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52CD4C9E2424D7A500762F9A /* LaunchScreen.storyboard in Resources */,
+				52CD4CC0242537C800762F9A /* DEPENDENCIES.md in Resources */,
 				52CD4C9B2424D7A500762F9A /* Assets.xcassets in Resources */,
 				52CD4C992424D7A200762F9A /* Main.storyboard in Resources */,
 			);
@@ -239,12 +297,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CD4CCE2425392300762F9A /* MockLocationService.swift in Sources */,
 				52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */,
 				52CD4CB424250FFE00762F9A /* UIRoundedView.swift in Sources */,
+				52CD4CD02425392A00762F9A /* WWLocationService.swift in Sources */,
 				52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */,
+				52CD4CC62425386E00762F9A /* Dependency.swift in Sources */,
 				52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */,
 				52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */,
+				52CD4CCC2425391900762F9A /* LocationService.swift in Sources */,
+				52CD4CCA242538FF00762F9A /* Result.swift in Sources */,
 				52CD4CBC24251AB800762F9A /* FindCityMapViewController.swift in Sources */,
+				52CD4CC2242537E900762F9A /* AppDependency.swift in Sources */,
+				52CD4CC4242537F600762F9A /* CoreDependency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

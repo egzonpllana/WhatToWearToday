@@ -43,6 +43,10 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    // MARK: - Unwind to Home
+    
+    @IBAction func prepareForUnwindToHome(_ segue: UIStoryboardSegue) {}
+
     // MARK: - Methods
 
     private func loadCurrentDay() {

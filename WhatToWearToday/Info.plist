@@ -58,7 +58,18 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need to get your location to set your current location on map.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need to get your location to set your current location on map.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to get your location to set your current location on map.</string>
 </dict>
 </plist>

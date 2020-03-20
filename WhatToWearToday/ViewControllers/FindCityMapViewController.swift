@@ -8,8 +8,13 @@
 
 import UIKit
 import MapKit
+import SwiftLocation
 
-class FindCityMapViewController: UIViewController {
+class FindCityMapViewController: UIViewController, HasDependencies {
+
+    // MARK: - Dependencies
+
+    private lazy var locationService: LocationService = dependencies.locationService()
 
     // MARK: - Outlets
 
