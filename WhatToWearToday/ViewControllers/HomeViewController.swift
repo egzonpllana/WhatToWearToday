@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  WhatToWearToday
 //
 //  Created by Egzon Pllana on 3/20/20.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
+
+    // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
+        // Do any additional setup after loading the view.
     }
 }
-

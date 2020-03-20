@@ -10,10 +10,12 @@
 		13992219BCC0736164BF7428 /* Pods_WhatToWearToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */; };
 		52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C912424D7A200762F9A /* AppDelegate.swift */; };
 		52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C932424D7A200762F9A /* SceneDelegate.swift */; };
-		52CD4C962424D7A200762F9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C952424D7A200762F9A /* ViewController.swift */; };
 		52CD4C992424D7A200762F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4C972424D7A200762F9A /* Main.storyboard */; };
 		52CD4C9B2424D7A500762F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4C9A2424D7A500762F9A /* Assets.xcassets */; };
 		52CD4C9E2424D7A500762F9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4C9C2424D7A500762F9A /* LaunchScreen.storyboard */; };
+		52CD4CB424250FFE00762F9A /* UIRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB324250FFE00762F9A /* UIRoundedView.swift */; };
+		52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB52425139B00762F9A /* HomeViewController.swift */; };
+		52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CB9242514E200762F9A /* UIExtendedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +23,13 @@
 		52CD4C8E2424D7A200762F9A /* WhatToWearToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWearToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CD4C912424D7A200762F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CD4C932424D7A200762F9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52CD4C952424D7A200762F9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		52CD4C982424D7A200762F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52CD4C9A2424D7A500762F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52CD4C9D2424D7A500762F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52CD4C9F2424D7A500762F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52CD4CB324250FFE00762F9A /* UIRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedView.swift; sourceTree = "<group>"; };
+		52CD4CB52425139B00762F9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52CD4CB9242514E200762F9A /* UIExtendedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtendedView.swift; sourceTree = "<group>"; };
 		CC55662C6D33BAF15B9BD1CA /* Pods-WhatToWearToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWearToday.release.xcconfig"; path = "Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday.release.xcconfig"; sourceTree = "<group>"; };
 		CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToWearToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,13 +78,39 @@
 			children = (
 				52CD4C912424D7A200762F9A /* AppDelegate.swift */,
 				52CD4C932424D7A200762F9A /* SceneDelegate.swift */,
-				52CD4C952424D7A200762F9A /* ViewController.swift */,
-				52CD4C972424D7A200762F9A /* Main.storyboard */,
+				52CD4CAC24250F8200762F9A /* Storyboards */,
+				52CD4CAB24250F7A00762F9A /* ViewControllers */,
+				52CD4CAD24250F8C00762F9A /* GUI */,
 				52CD4C9A2424D7A500762F9A /* Assets.xcassets */,
 				52CD4C9C2424D7A500762F9A /* LaunchScreen.storyboard */,
 				52CD4C9F2424D7A500762F9A /* Info.plist */,
 			);
 			path = WhatToWearToday;
+			sourceTree = "<group>";
+		};
+		52CD4CAB24250F7A00762F9A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CB52425139B00762F9A /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52CD4CAC24250F8200762F9A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4C972424D7A200762F9A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		52CD4CAD24250F8C00762F9A /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CB324250FFE00762F9A /* UIRoundedView.swift */,
+				52CD4CB9242514E200762F9A /* UIExtendedView.swift */,
+			);
+			path = GUI;
 			sourceTree = "<group>";
 		};
 		944F35CD6A0E75DCEA263752 /* Frameworks */ = {
@@ -206,9 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CD4C962424D7A200762F9A /* ViewController.swift in Sources */,
 				52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */,
+				52CD4CB424250FFE00762F9A /* UIRoundedView.swift in Sources */,
 				52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */,
+				52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */,
+				52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
