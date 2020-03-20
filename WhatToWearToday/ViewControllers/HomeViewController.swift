@@ -39,7 +39,6 @@ class HomeViewController: UIViewController {
         // Manage navigation bar visibility
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
     // MARK: - Unwind to Home
     @IBAction func prepareForUnwindToHome(_ segue: UIStoryboardSegue) {}
 }
