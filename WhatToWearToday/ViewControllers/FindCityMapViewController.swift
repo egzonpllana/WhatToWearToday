@@ -20,16 +20,15 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     @IBOutlet weak var searchCityTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
-
-    // MARK: - Properties
-    var newPlaceMark: PlaceMark? /* Will be used to save thorugh API Call */
+    @IBOutlet weak var choosenCityFooterButton: UIButton!
+    @IBOutlet weak var cityDescriptionFooterLabel: UILabel!
 
     // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Tap location in Map
+        /// Add UITapGestureRecognizer on MKMapView
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleMapKitTaps))
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
@@ -39,39 +38,53 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     // MARK: - Methods
 
+    /// Observe user clicks over the MKMapView
     @objc func handleMapKitTaps(gestureReconizer: UILongPressGestureRecognizer) {
         let location = gestureReconizer.location(in: mapView)
         let locationInMap = mapView.convert(location, toCoordinateFrom: mapView)
         reverseGeocode(location: CLLocation(latitude: locationInMap.latitude, longitude: locationInMap.longitude))
     }
 
-    private func reverseGeocode(location: CLLocation) {
-        self.locationService.reverseGeocode(coordinate: location.coordinate) { (result) in
+    /// Get user location with LocationService
+    func getUserCurrentLocation() {
+        locationService.getCurrentApproximateLocation { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .failure(let error):
-                debugPrint(error)
-            case .success(let places):
-                let state = places.first?.subAdministrativeArea
-                let city = places.first?.locality
-                let street = places.first?.thoroughfare
-                let postalCode = places.first?.postalCode
-                let country = places.first?.country
-
-                guard
-                    let latitude = places.first?.location?.coordinate.latitude,
-                    let longitude = places.first?.location?.coordinate.longitude else {
-                        assertionFailure("There was an error getting latitude and longitude!")
-                        return
-                }
-
-                self.newPlaceMark = PlaceMark(country: country, address: city, suburb: street, state: state, postcode: postalCode, coordinates: (latitude: latitude, longitude: longitude))
-                self.addAnnotation(inCoordinates: location.coordinate)
-                self.centerMapOnLocation(location: location)
-                self.searchCityTextField.text = "\(street ?? ""), \(city ?? "")"
+                debugPrint("Error :", error, #line)
+            case .success(let location):
+                self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
             }
         }
     }
 
+    /// Get reversed geocode from CLLocation
+    private func reverseGeocode(location: CLLocation) {
+        self.locationService.reverseGeocode(coordinate: location.coordinate) { (result) in
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+            case .success(let places):
+                let state = places.first?.subAdministrativeArea
+                let city = places.first?.locality
+                let street = places.first?.thoroughfare
+
+                self.addAnnotation(inCoordinates: location.coordinate)
+                self.centerMapOnLocation(location: location)
+                if let streetName = street, let cityName = city, let stateName = state {
+                    self.searchCityTextField.text = "\(streetName), \(cityName), \(stateName)"
+                    self.choosenCityFooterButton.setTitle("\(streetName), \(cityName), \(stateName)", for: .normal)
+                    self.cityDescriptionFooterLabel.text = "See more details"
+                } else {
+                    self.searchCityTextField.text = ""
+                    self.choosenCityFooterButton.setTitle("Choose a city", for: .normal)
+                    self.cityDescriptionFooterLabel.text = "Search or tap on map"
+                }
+            }
+        }
+    }
+
+    /// Place annotation on MKMapView
     private func addAnnotation(inCoordinates: CLLocationCoordinate2D) {
         self.mapView.removeAnnotations(self.mapView.annotations)
         let annotation = MKPointAnnotation()
@@ -79,19 +92,21 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         mapView.addAnnotation(annotation)
     }
 
+    /// Focus on center of the MKMapView
     private func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
                                                        latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
+    /// Get CLLocation from text of searchCityTextField
     private func getLocationPlacemark(address: String) {
         locationService.fetchCoordinates(forAddress: address) { (result) in
             switch result {
             case .success(let placemark):
                 self.reverseGeocode(location: CLLocation(latitude: placemark.coordinates.latitude, longitude: placemark.coordinates.longitude))
             case .failure(let error):
-                debugPrint(error)
+                debugPrint("Error :", error, #line)
             }
         }
     }
@@ -99,8 +114,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     // MARK: - Actions
     
     @IBAction func locateMeButtonPressed(_ sender: Any) {
-        let sydney = CLLocation(latitude: -33.865, longitude: 151.209444)
-        reverseGeocode(location: sydney)
+        getUserCurrentLocation()
     }
 
     @IBAction func locationTextFieldPrimaryActionTriggered(_ sender: Any) {
@@ -110,6 +124,9 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         }
     }
 }
+
+// MARK: - MKMapViewDelegate
+
 extension FindCityMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "LocationPin"
