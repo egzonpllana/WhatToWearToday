@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController , HasDependencies {
+
+    // MARK: - Dependencies
+
+    private lazy var locationService: LocationService = dependencies.locationService()
 
     // MARK: - Outlets
 
@@ -25,6 +30,9 @@ class HomeViewController: UIViewController {
 
         // Load current day
         loadCurrentDay()
+
+        // Get user location
+        getUserCurrentLocation()
 
         // Do any additional setup after loading the view.
     }
@@ -61,4 +69,32 @@ class HomeViewController: UIViewController {
         dateFormatter.dateFormat = "LLL"
         dayLabel.text = dateFormatter.string(from: date)
     }
+
+    /// Get user location with LocationService
+    private func getUserCurrentLocation() {
+        locationService.getCurrentApproximateLocation { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+            case .success(let location):
+                self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            }
+        }
+    }
+
+    /// Get reversed geocode from CLLocation
+    private func reverseGeocode(location: CLLocation) {
+        self.locationService.reverseGeocode(coordinate: location.coordinate) { (result) in
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+            case .success(let places):
+                if let city = places.first?.locality {
+                    self.cityLabel.text = city
+                }
+            }
+        }
+    }
+
 }

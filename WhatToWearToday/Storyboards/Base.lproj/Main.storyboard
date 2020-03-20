@@ -175,7 +175,7 @@
                     <navigationItem key="navigationItem" id="Mua-lM-z3P"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="cityLabel" destination="iU5-7P-2j8" id="2JU-zW-QB4"/>
+                        <outlet property="cityLabel" destination="frE-1l-XVn" id="k5q-EY-Soc"/>
                         <outlet property="dateLabel" destination="rlg-Eb-XN2" id="Hbx-WG-fNk"/>
                         <outlet property="dayLabel" destination="BK3-BV-Vw7" id="T1i-JN-AR5"/>
                         <outlet property="tempFeelsLikeLabel" destination="Rv4-PV-oDB" id="a7L-GY-NfC"/>

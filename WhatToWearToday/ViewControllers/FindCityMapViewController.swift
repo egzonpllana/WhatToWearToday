@@ -65,18 +65,17 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
             case .failure(let error):
                 debugPrint("Error :", error, #line)
             case .success(let places):
-                let state = places.first?.subAdministrativeArea
                 let city = places.first?.locality
                 let street = places.first?.thoroughfare
 
-                self.addAnnotation(inCoordinates: location.coordinate)
-                self.centerMapOnLocation(location: location)
-                if let streetName = street, let cityName = city, let stateName = state {
-                    self.searchCityTextField.text = "\(streetName), \(cityName), \(stateName)"
-                    self.choosenCityFooterButton.setTitle("\(streetName), \(cityName), \(stateName)", for: .normal)
+                if let streetName = street, let cityName = city {
+                    self.searchCityTextField.text = "\(streetName), \(cityName)"
+                    self.choosenCityFooterButton.setTitle("\(streetName), \(cityName)", for: .normal)
                     self.cityDescriptionFooterLabel.text = "See more details"
+                    self.centerMapOnLocation(location: location)
+                    self.addAnnotation(inCoordinates: location.coordinate)
+                    self.searchCityTextField.resignFirstResponder()
                 } else {
-                    self.searchCityTextField.text = ""
                     self.choosenCityFooterButton.setTitle("Choose a city", for: .normal)
                     self.cityDescriptionFooterLabel.text = "Search or tap on map"
                 }
@@ -120,7 +119,6 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     @IBAction func locationTextFieldPrimaryActionTriggered(_ sender: Any) {
         if let textField = sender as? UITextField, let text = textField.text, text != "" {
             getLocationPlacemark(address: text)
-            searchCityTextField.resignFirstResponder()
         }
     }
 }
