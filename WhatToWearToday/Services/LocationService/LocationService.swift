@@ -34,7 +34,7 @@ enum LocationServiceError: String, CaseIterable {
 protocol LocationService {
     var authorizationStatus: CLAuthorizationStatus { get }
     func getCurrentApproximateLocation(completion: @escaping (Result<CLLocation>) -> Void)
-    func getCurrentLocation(desiredAccuracy: CLLocationAccuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation>) -> Void)
+    func getCurrentLocationFromGPS(desiredAccuracy: CLLocationAccuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation>) -> Void)
     func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping (Result<[CLPlacemark]>) -> Void)
     func autocomplete(_ text: String, completion: @escaping (Result<CLPlacemark>) -> Void)
     func reverseGeocodeAddress(address: String, suburb: String, state: String, postcode: String, completion: @escaping (Result<PlaceMark>) -> Void)
@@ -42,8 +42,8 @@ protocol LocationService {
 }
 
 extension LocationService {
-    func getCurrentLocation(desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers, useInaccurateLocationIfTimeout: Bool = true, completion: @escaping (Result<CLLocation>) -> Void) {
-        self.getCurrentLocation(desiredAccuracy: desiredAccuracy, useInaccurateLocationIfTimeout: useInaccurateLocationIfTimeout, completion: completion)
+    func getCurrentLocationFromGPS(desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers, useInaccurateLocationIfTimeout: Bool = true, completion: @escaping (Result<CLLocation>) -> Void) {
+        self.getCurrentLocationFromGPS(desiredAccuracy: desiredAccuracy, useInaccurateLocationIfTimeout: useInaccurateLocationIfTimeout, completion: completion)
     }
 }
 

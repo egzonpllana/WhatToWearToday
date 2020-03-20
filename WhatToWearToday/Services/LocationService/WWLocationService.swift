@@ -12,7 +12,7 @@ import SwiftLocation
 import Contacts
 
 class WWLocationService: LocationService {
-
+    
     var authorizationStatus: CLAuthorizationStatus { return CLLocationManager.authorizationStatus() }
 
     private let geocoder: CLGeocoder
@@ -46,7 +46,7 @@ class WWLocationService: LocationService {
         }
     }
 
-    func getCurrentLocation(desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation>) -> Void) {
+    func getCurrentLocationFromGPS(desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation>) -> Void) {
         // Wait 10s max after authorization has been determined
         LocationManager.shared.locateFromGPS(.continous, accuracy: .city) { result in
             switch result {

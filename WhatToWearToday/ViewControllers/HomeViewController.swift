@@ -6,6 +6,10 @@
 //  Copyright © 2020 Native Coders. All rights reserved.
 //
 
+// NOTE: Home screen design is inspired by:
+// https://dribbble.com/shots/6609092-Weather-iOS-app-interaction
+// https://dribbble.com/shots/6887377-Weather-Cards
+
 import UIKit
 import MapKit
 

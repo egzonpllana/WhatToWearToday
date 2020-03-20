@@ -28,7 +28,7 @@ class MockLocationService: LocationService {
         }
     }
 
-    func getCurrentLocation(completion: @escaping (Result<CLLocation>) -> Void) {
+    func getCurrentLocationFromGPS(completion: @escaping (Result<CLLocation>) -> Void) {
         // Simulate network latency
         DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval.random(in: 0.5...3.0)) {
             guard let sampleLocation = self.samplePlacemark.location else {

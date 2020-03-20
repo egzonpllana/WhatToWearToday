@@ -6,6 +6,9 @@
 //  Copyright © 2020 Native Coders. All rights reserved.
 //
 
+// NOTE: Our Dependency Injection pattern is based on
+// http://basememara.com/swift-protocol-oriented-dependency-injection/
+
 import UIKit
 
 /// The singleton dependency container reference
