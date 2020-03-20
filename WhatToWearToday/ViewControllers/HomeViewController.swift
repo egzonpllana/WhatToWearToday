@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
     }
 
     // MARK: - Methods
-    
+
     private func loadCurrentDay() {
         let date = Date()
         let dateFormatter = DateFormatter()
