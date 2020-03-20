@@ -28,14 +28,20 @@ class WWLocationService: LocationService {
         LocationManager.shared.locateFromIP(service: .ipAPI) { result in
           switch result {
             case .failure(let error):
-              completion(Result.failure(error))
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
           case .success(let location):
             guard let latitude = location.coordinates?.latitude, let longitude = location.coordinates?.longitude else {
+                DispatchQueue.main.async {
                 completion(Result.failure(LocationServiceError.locationError))
+                }
                 return
             }
             let cllocation = CLLocation(latitude: latitude, longitude: longitude)
-            completion(Result.success(cllocation))
+            DispatchQueue.main.async {
+                completion(Result.success(cllocation))
+            }
           }
         }
     }
@@ -45,9 +51,13 @@ class WWLocationService: LocationService {
         LocationManager.shared.locateFromGPS(.continous, accuracy: .city) { result in
             switch result {
             case .failure(let error):
-                completion(Result.failure(error))
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
             case .success(let location):
-                completion(Result.success(location))
+                DispatchQueue.main.async {
+                    completion(Result.success(location))
+                }
             }
         }
     }
@@ -56,9 +66,13 @@ class WWLocationService: LocationService {
         LocationManager.shared.locateFromCoordinates(coordinate, timeout: nil, service: .google(googleOptionsWithApiKey)) { (result) in
             switch result {
               case .failure(let error):
-                completion(Result.failure(error))
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
               case .success(let places):
-                completion(Result.success(places.map({ $0.placemark }).compactMap({ $0 })))
+                DispatchQueue.main.async {
+                    completion(Result.success(places.map({ $0.placemark }).compactMap({ $0 })))
+                }
             }
         }
     }
@@ -76,7 +90,10 @@ class WWLocationService: LocationService {
             } else if let placemark = placemarks?.first {
                 guard let location = placemark.location,
                     let postalAddress = placemark.postalAddress else {
-                        completion(Result.failure(LocationServiceError.locationUnknown)); return
+                        DispatchQueue.main.async {
+                            completion(Result.failure(LocationServiceError.locationUnknown))
+                        }
+                        return
                 }
                 let placeMarkObject = PlaceMark(country: postalAddress.country,
                                                 address: postalAddress.street,
@@ -85,9 +102,13 @@ class WWLocationService: LocationService {
                                                 postcode: postalAddress.postalCode,
                                                 coordinates: (latitude: location.coordinate.latitude,
                                                               longitude: location.coordinate.longitude))
-                completion(Result.success((placeMarkObject)))
+                DispatchQueue.main.async {
+                    completion(Result.success((placeMarkObject)))
+                }
             } else {
-                completion(Result.failure(LocationServiceError.locationUnknown))
+                DispatchQueue.main.async {
+                    completion(Result.failure(LocationServiceError.locationUnknown))
+                }
             }
         }
     }
@@ -97,12 +118,18 @@ class WWLocationService: LocationService {
         LocationManager.shared.autocomplete(partialMatch: .placeDetail("Piazza della Repubblica, Roma"), service: .apple(nil)) { result in
             switch result {
             case .failure(let error):
-                completion(Result.failure(error))
+                DispatchQueue.main.async {
+                    completion(Result.failure(error))
+                }
             case .success(let places):
                 if let firstLocation = places.first, let placeMark = firstLocation.fullMatch?.placemark {
-                    completion(Result.success(placeMark))
+                    DispatchQueue.main.async {
+                        completion(Result.success(placeMark))
+                    }
                 } else {
-                    completion(Result.failure(LocationServiceError.locationPlacemarkError))
+                    DispatchQueue.main.async {
+                        completion(Result.failure(LocationServiceError.locationPlacemarkError))
+                    }
                 }
             }
         }

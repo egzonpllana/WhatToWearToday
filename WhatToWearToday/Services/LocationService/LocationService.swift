@@ -10,11 +10,11 @@ import Foundation
 import CoreLocation
 
 struct PlaceMark {
-    let country: String
-    let address: String
-    let suburb: String
-    let state: String
-    let postcode: String
+    let country: String?
+    let address: String?
+    let suburb: String?
+    let state: String?
+    let postcode: String?
     let coordinates: (latitude: Double, longitude: Double)
 }
 

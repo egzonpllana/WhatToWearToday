@@ -80,17 +80,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m4M-Mo-xtc">
-                                <rect key="frame" x="20" y="683.5" width="110" height="88.5"/>
+                                <rect key="frame" x="20" y="683.5" width="103" height="88.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU5-7P-2j8">
-                                        <rect key="frame" x="0.0" y="0.0" width="110" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="16.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.10957475140681826" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frE-1l-XVn">
-                                        <rect key="frame" x="0.0" y="16.5" width="110" height="72"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frE-1l-XVn">
+                                        <rect key="frame" x="0.0" y="16.5" width="103" height="72"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.1095747514" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="62"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -204,6 +204,9 @@
                                                 <rect key="frame" x="12" y="15" width="358" height="20"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="locationTextFieldPrimaryActionTriggered:" destination="tpu-8v-E2g" eventType="primaryActionTriggered" id="eoW-Rg-FxG"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,24 +266,24 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tGQ-MA-rwT">
-                                        <rect key="frame" x="132.5" y="12.5" width="149" height="35"/>
+                                        <rect key="frame" x="147.5" y="12.5" width="119" height="35"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9lI-y4-6bL">
-                                                <rect key="frame" x="0.0" y="0.0" width="149" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snq-ho-gn9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="149" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="119" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="1rJ-oQ-aJU"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="19"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Choose your city">
+                                                        <state key="normal" title="Choose a city">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yS9-c3-aQK">
-                                                        <rect key="frame" x="0.0" y="22" width="149" height="13"/>
+                                                        <rect key="frame" x="0.0" y="22" width="119" height="13"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="13" id="CZ1-k6-Y6H"/>
                                                         </constraints>
