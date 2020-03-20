@@ -23,6 +23,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Load current day
+        loadCurrentDay()
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +42,19 @@ class HomeViewController: UIViewController {
         // Manage navigation bar visibility
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-    // MARK: - Unwind to Home
-    @IBAction func prepareForUnwindToHome(_ segue: UIStoryboardSegue) {}
+
+    // MARK: - Methods
+    
+    private func loadCurrentDay() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+
+        // Get date
+        dateFormatter.dateFormat = "dd"
+        dateLabel.text = dateFormatter.string(from: date)
+
+        // Get day
+        dateFormatter.dateFormat = "LLL"
+        dayLabel.text = dateFormatter.string(from: date)
+    }
 }
