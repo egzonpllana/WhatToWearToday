@@ -94,7 +94,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     /// Focus on center of the MKMapView
     private func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
-                                                       latitudinalMeters: 1000, longitudinalMeters: 1000)
+                                                       latitudinalMeters: 2000, longitudinalMeters: 2000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
