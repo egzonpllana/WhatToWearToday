@@ -36,6 +36,20 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        locationService.getCurrentApproximateLocation { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+            case .success(let location):
+                self.centerMapOnLocation(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            }
+        }
+    }
+
     // MARK: - Methods
 
     /// Observe user clicks over the MKMapView
@@ -94,7 +108,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     /// Focus on center of the MKMapView
     private func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
-                                                       latitudinalMeters: 2000, longitudinalMeters: 2000)
+                                                       latitudinalMeters: 4000, longitudinalMeters: 4000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
