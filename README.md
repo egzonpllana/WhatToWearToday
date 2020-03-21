@@ -52,3 +52,7 @@ WhatToWearToday - iOS App.
     injection that works great with unit test and even frameworks.
     
 ## Preview ##
+
+### Today Weather ###
+![TodayWeather](https://user-images.githubusercontent.com/27929436/77238762-9f1d7200-6bd3-11ea-876b-17f59394a7ab.png)
+
