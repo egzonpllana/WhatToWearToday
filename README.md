@@ -1,5 +1,5 @@
 # WhatToWearToday #
-# Swifty Protocol-Oriented Dependency Injection #
+# Swifty Protocol-Oriented with Dependency Injection #
 WhatToWearToday - iOS App.
 
     WhatToWearToday is an app that provides weather for today, or 
