@@ -24,7 +24,7 @@ extension WeatherEndPoint {
         case .cityForecastByName(let city):
             return "forecast?q=\(city)&appid=\(privateAPIKey)"
         case .cityForecastByCoordinates(let coordinates):
-            return "weather?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(privateAPIKey)"
+            return "forecast?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&appid=\(privateAPIKey)"
         }
     }
 

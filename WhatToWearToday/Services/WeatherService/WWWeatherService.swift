@@ -7,40 +7,24 @@
 //
 
 import Foundation
+import MapKit
 
 class WWWeatherService: WeatherService {
-    func cityWeatherToday(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void) {
-        APIClient.performRequest(type: ForecastModel.self, withRoute: WeatherEndPoint.cityForecastByName(city: city)) { (result) in
+    func cityWeather(cityCoordinates coordinates: CLLocationCoordinate2D, completion: @escaping (Result<ForecastModel, Error>) -> Void) {
+        APIClient.performRequest(type: ForecastModel.self, withRoute: WeatherEndPoint.cityForecastByCoordinates(coordinates: coordinates)) { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let forecastData):
-                if let weatherToday = forecastData.list.first {
-                    let forecastDetails = ForecastModel(list: [weatherToday])
-                    let cityDetails = CityDetailsModel(name: city, forecast: forecastDetails)
-                    completion(.success(cityDetails))
-                } else {
-                    completion(.failure(WeatherServiceError.noData))
-                }
-            }
-        }
-    }
+                // Forecast api returns weather every 3hours, which menas 8 values per day
+                // We need only one value per day
 
-    func cityWeatherForFiveDays(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void) {
-        APIClient.performRequest(type: ForecastModel.self, withRoute: WeatherEndPoint.cityForecastByName(city: city)) { (result) in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let cityWeather):
-                if cityWeather.list.count > 5 {
-                    var weatherData = cityWeather
-                    weatherData.list = cityWeather.list.enumerated().compactMap{ $0.offset < 3 ? $0.element : nil }
-                    let cityDetails = CityDetailsModel(name: city, forecast: weatherData)
-                    completion(.success(cityDetails))
-                } else {
-                    let cityDetails = CityDetailsModel(name: city, forecast: cityWeather)
-                    completion(.success(cityDetails))
+                var forecast = forecastData
+                let itemsAtEvenIndices = forecastData.list.enumerated().compactMap { tuple in
+                  tuple.offset.isMultiple(of: 8) ? tuple.element : nil
                 }
+                forecast.list = itemsAtEvenIndices
+                completion(.success(forecast))
             }
         }
     }

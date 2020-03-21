@@ -8,12 +8,16 @@
 
 import Foundation
 
+// API data models structure:
+// Response -> { list: [ main: { temp: Double, feels_like: Double } ]
+
 struct ForecastModel: Codable {
     var list: [WeatherModel]
+    let city: CityModel
+}
 
-    enum CodingKeys: String, CodingKey {
-        case list
-    }
+struct CityModel: Codable {
+    let name: String
 }
 
 struct WeatherModel: Codable {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 enum WeatherServiceError: String {
     case unknownCity = "City was not recognized by weather provider."
@@ -28,14 +29,5 @@ protocol WeatherService {
      - Parameters:
         - city: name of the city
      */
-    func cityWeatherToday(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void)
-
-    /**
-     **Get city Weather for five days**
-     * Details:
-        - Will return city weather data for five days of type CityDetailsModel
-     - Parameters:
-        - city: name of the city
-     */
-    func cityWeatherForFiveDays(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void)
+    func cityWeather(cityCoordinates coordinates: CLLocationCoordinate2D, completion: @escaping (Result<ForecastModel, Error>) -> Void)
 }

@@ -169,7 +169,7 @@
                                 <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="back_black_icon"/>
                                 <connections>
-                                    <segue destination="edZ-ak-1kg" kind="unwind" unwindAction="prepareForUnwindToHome:" id="fb3-cB-YRg"/>
+                                    <action selector="backButtonPressed:" destination="bHT-d7-Bgw" eventType="touchUpInside" id="lqy-K8-PNV"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -184,7 +184,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUe-P9-IcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="edZ-ak-1kg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="124.55357142857142"/>
         </scene>
@@ -321,6 +320,9 @@
                             <outlet property="delegate" destination="xzr-hy-ZIH" id="Co1-XG-XYb"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="11Z-wF-umK" id="02M-t9-WGa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYb-Uw-6rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

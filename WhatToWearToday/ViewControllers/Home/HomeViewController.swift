@@ -33,10 +33,10 @@ class HomeViewController: UIViewController , HasDependencies {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Load current day
+        /// Load current day
         loadCurrentDay()
 
-        // Get user location
+        /// Get user location
         getCurrentLocation()
 
         // Do any additional setup after loading the view.
@@ -45,14 +45,14 @@ class HomeViewController: UIViewController , HasDependencies {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        // Manage navigation bar visibility
+        /// Manage navigation bar visibility
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Manage navigation bar visibility
+        /// Manage navigation bar visibility
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
@@ -66,23 +66,23 @@ class HomeViewController: UIViewController , HasDependencies {
         let date = Date()
         let dateFormatter = DateFormatter()
 
-        // Get date
+        /// Get date
         dateFormatter.dateFormat = "dd"
         dateLabel.text = dateFormatter.string(from: date)
 
-        // Get day
+        /// Get day
         dateFormatter.dateFormat = "LLL"
         dayLabel.text = dateFormatter.string(from: date)
     }
 
-    private func getWeatherData() {
-        weatherService.cityWeatherToday(cityName: "California") { [weak self] (result) in
+    private func getWeatherData(fromCoordinates coordinates: CLLocationCoordinate2D) {
+        weatherService.cityWeather(cityCoordinates: coordinates) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
                 debugPrint("Error: ", error)
             case .success(let cityForecast):
-                guard let forecast = cityForecast.forecast.list.first, let cityTemperature = forecast.main else {
+                guard let forecast = cityForecast.list.first, let cityTemperature = forecast.main else {
                     debugPrint("There was an error getting city forecast!", #line)
                     return
                 }
@@ -100,14 +100,16 @@ class HomeViewController: UIViewController , HasDependencies {
     /// Get user location with LocationService
     private func getCurrentLocation() {
         locationService.getCurrentLocationFromGPS(subscription: .oneShot, desiredAccuracy: .city, useInaccurateLocationIfTimeout: true)  { [weak self] (result) in
-            //locationService.getCurrentApproximateLocation { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
                 debugPrint("Error: ", error)
             case .success(let location):
-                self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
-                self.getWeatherData()
+                let locationCoordinates = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                self.reverseGeocode(location: locationCoordinates)
+
+                let locationCoordinates2D = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                self.getWeatherData(fromCoordinates: locationCoordinates2D)
             }
         }
     }
@@ -135,6 +137,23 @@ class HomeViewController: UIViewController , HasDependencies {
                     self.cityLabel.text = city
                 }
             }
+        }
+    }
+
+}
+
+// MARK: - Navigation
+
+extension HomeViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        case findCityMap
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifierForSegue(segue: segue) {
+        case .findCityMap:
+            break
         }
     }
 

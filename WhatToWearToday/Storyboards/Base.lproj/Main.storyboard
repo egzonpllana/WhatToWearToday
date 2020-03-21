@@ -129,7 +129,7 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="0rS-Do-qwf" kind="show" id="zU6-eF-xNe"/>
+                                            <segue destination="0rS-Do-qwf" kind="show" identifier="findCityMap" id="zU6-eF-xNe"/>
                                         </connections>
                                     </button>
                                 </subviews>

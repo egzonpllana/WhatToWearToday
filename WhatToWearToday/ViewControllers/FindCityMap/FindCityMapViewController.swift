@@ -26,7 +26,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     // MARK: - Properties
 
-    var cityForecast: CityDetailsModel?
+    var cityForecast: ForecastModel?
 
     // MARK: - View life cycle
 
@@ -58,14 +58,13 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     }
 
     /// Get weather data from API
-    private func getWeatherData(forCity city: String) {
-        let cityNameLowercased = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil).lowercased()
-        weatherService.cityWeatherForFiveDays(cityName: cityNameLowercased) { [weak self] (result) in
+    private func getWeatherData(fromLocation location: CLLocation) {
+        let locationCoordinates2D = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        weatherService.cityWeather(cityCoordinates: locationCoordinates2D) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
                 debugPrint("Error: ", error)
-                self.cityForecast = nil
             case .success(let cityForecast):
                 self.cityForecast = cityForecast
             }
@@ -114,7 +113,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
                     self.choosenCityButton.setTitle(cityName, for: .normal)
                     self.cityDescriptionButton.setTitle("See more details", for: .normal)
                     self.centerMapOnLocation(location: location)
-                    self.getWeatherData(forCity: cityName)
+                    self.getWeatherData(fromLocation: location)
                     self.addAnnotation(inCoordinates: location.coordinate)
                     self.searchCityTextField.resignFirstResponder()
                 } else {
@@ -170,6 +169,10 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
             self.performSegue(withIdentifier: .cityDetails, sender: cityForecast)
         }
     }
+
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 // MARK: - MKMapViewDelegate
@@ -195,18 +198,15 @@ extension FindCityMapViewController: MKMapViewDelegate {
 extension FindCityMapViewController: SegueHandlerType {
     enum SegueIdentifier: String {
         case cityDetails
-        case prepareForUnwindToHome
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segueIdentifierForSegue(segue: segue) {
         case .cityDetails:
-            if let reminderDetailsViewController = segue.destination as? WWCityDetailsTableViewController, let cityDetails = sender as? CityDetailsModel {
-                reminderDetailsViewController.city = cityDetails
+            if let reminderDetailsViewController = segue.destination as? WWCityDetailsTableViewController, let forecastData = sender as? ForecastModel {
+                reminderDetailsViewController.forecast = forecastData
             }
-        case .prepareForUnwindToHome:
-            break
         }
     }
 }

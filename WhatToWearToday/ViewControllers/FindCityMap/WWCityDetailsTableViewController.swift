@@ -11,15 +11,22 @@ import MapKit
 
 class WWCityDetailsTableViewController: UITableViewController {
 
+    // MARK: - Outlets
+
+    @IBOutlet weak var cityNameLabel: UILabel!
+
     // MARK: - Properties
 
-    var city: CityDetailsModel!
+    var forecast: ForecastModel!
 
     // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        /// Load city name
+        cityNameLabel.text = forecast.city.name
+
         // Do any additional setup after loading the view.
     }
 }
@@ -33,12 +40,12 @@ extension WWCityDetailsTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cityDetailsCell: CityDetailsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        let weatherData = city.forecast.list[indexPath.row]
-        cityDetailsCell.populateCell(withCityWeather: weatherData)
+        let weatherData = forecast.list
+        cityDetailsCell.populateCell(withCityWeather: weatherData[indexPath.row])
         return cityDetailsCell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return city.forecast.list.count
+        return forecast.list.count
     }
 }

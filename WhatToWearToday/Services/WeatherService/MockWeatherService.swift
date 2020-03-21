@@ -7,15 +7,10 @@
 //
 
 import Foundation
+import MapKit
 
 class MockWeatherService: WeatherService {
-    func cityWeatherToday(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void) {
-        let cityDetails = CityDetailsModel(name: city, forecast: ForecastModelStubModel)
-        completion(.success(cityDetails))
-    }
-
-    func cityWeatherForFiveDays(cityName city: String, completion: @escaping (Result<CityDetailsModel, Error>) -> Void) {
-        let cityDetails = CityDetailsModel(name: city, forecast: ForecastModelStubModel)
-        completion(.success(cityDetails))
+    func cityWeather(cityCoordinates coordinates: CLLocationCoordinate2D, completion: @escaping (Result<ForecastModel, Error>) -> Void) {
+        completion(.success(ForecastModelStubModel))
     }
 }
