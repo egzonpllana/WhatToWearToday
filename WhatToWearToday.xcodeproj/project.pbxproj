@@ -21,7 +21,6 @@
 		52CD4CC2242537E900762F9A /* AppDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC1242537E900762F9A /* AppDependency.swift */; };
 		52CD4CC4242537F600762F9A /* CoreDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC3242537F600762F9A /* CoreDependency.swift */; };
 		52CD4CC62425386E00762F9A /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC52425386E00762F9A /* Dependency.swift */; };
-		52CD4CCA242538FF00762F9A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CC9242538FF00762F9A /* Result.swift */; };
 		52CD4CCC2425391900762F9A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCB2425391900762F9A /* LocationService.swift */; };
 		52CD4CCE2425392300762F9A /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCD2425392300762F9A /* MockLocationService.swift */; };
 		52CD4CD02425392A00762F9A /* WWLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4CCF2425392A00762F9A /* WWLocationService.swift */; };
@@ -44,7 +43,6 @@
 		52CD4CC1242537E900762F9A /* AppDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependency.swift; sourceTree = "<group>"; };
 		52CD4CC3242537F600762F9A /* CoreDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDependency.swift; sourceTree = "<group>"; };
 		52CD4CC52425386E00762F9A /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
-		52CD4CC9242538FF00762F9A /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		52CD4CCB2425391900762F9A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		52CD4CCD2425392300762F9A /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		52CD4CCF2425392A00762F9A /* WWLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWLocationService.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				52CD4C9F2424D7A500762F9A /* Info.plist */,
 				52CD4C912424D7A200762F9A /* AppDelegate.swift */,
 				52CD4C932424D7A200762F9A /* SceneDelegate.swift */,
-				52CD4CC8242538ED00762F9A /* Helpers */,
 				52CD4CBD242537A700762F9A /* Services */,
 				52CD4CAC24250F8200762F9A /* Storyboards */,
 				52CD4CAB24250F7A00762F9A /* ViewControllers */,
@@ -162,14 +159,6 @@
 				52CD4CCF2425392A00762F9A /* WWLocationService.swift */,
 			);
 			path = LocationService;
-			sourceTree = "<group>";
-		};
-		52CD4CC8242538ED00762F9A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				52CD4CC9242538FF00762F9A /* Result.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		944F35CD6A0E75DCEA263752 /* Frameworks */ = {
@@ -306,7 +295,6 @@
 				52CD4CBA242514E200762F9A /* UIExtendedView.swift in Sources */,
 				52CD4CB62425139B00762F9A /* HomeViewController.swift in Sources */,
 				52CD4CCC2425391900762F9A /* LocationService.swift in Sources */,
-				52CD4CCA242538FF00762F9A /* Result.swift in Sources */,
 				52CD4CBC24251AB800762F9A /* FindCityMapViewController.swift in Sources */,
 				52CD4CC2242537E900762F9A /* AppDependency.swift in Sources */,
 				52CD4CC4242537F600762F9A /* CoreDependency.swift in Sources */,

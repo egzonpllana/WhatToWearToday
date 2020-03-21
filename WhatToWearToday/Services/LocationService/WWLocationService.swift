@@ -23,7 +23,7 @@ class WWLocationService: LocationService {
         geocoder = CLGeocoder()
     }
 
-    func getCurrentApproximateLocation(completion: @escaping (Result<CLLocation>) -> Void) {
+    func getCurrentApproximateLocation(completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
         LocationManager.shared.requireUserAuthorization()
         LocationManager.shared.locateFromIP(service: .ipAPI) { result in
           switch result {
@@ -34,7 +34,7 @@ class WWLocationService: LocationService {
           case .success(let location):
             guard let latitude = location.coordinates?.latitude, let longitude = location.coordinates?.longitude else {
                 DispatchQueue.main.async {
-                completion(Result.failure(LocationServiceError.locationError))
+                    completion(Result.failure(.generic("\(LocationManager.ErrorReason.self)")))
                 }
                 return
             }
@@ -46,13 +46,13 @@ class WWLocationService: LocationService {
         }
     }
 
-    func getCurrentLocationFromGPS(desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation>) -> Void) {
+    func getCurrentLocationFromGPS(desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
         // Wait 10s max after authorization has been determined
         LocationManager.shared.locateFromGPS(.continous, accuracy: .city) { result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    completion(Result.failure(error))
+                    completion(.failure(error))
                 }
             case .success(let location):
                 DispatchQueue.main.async {
@@ -62,7 +62,7 @@ class WWLocationService: LocationService {
         }
     }
 
-    func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping (Result<[CLPlacemark]>) -> Void) {
+    func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping (Result<[CLPlacemark], LocationManager.ErrorReason>) -> Void) {
         LocationManager.shared.locateFromCoordinates(coordinate, timeout: nil, service: .google(googleOptionsWithApiKey)) { (result) in
             switch result {
               case .failure(let error):
@@ -77,12 +77,12 @@ class WWLocationService: LocationService {
         }
     }
 
-    func reverseGeocodeAddress(address: String, suburb: String, state: String, postcode: String, completion: @escaping (Result<PlaceMark>) -> Void) {
+    func reverseGeocodeAddress(address: String, suburb: String, state: String, postcode: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void) {
         let fullAddress = "\(address), \(suburb), \(state), \(postcode)"
         fetchCoordinates(forAddress: fullAddress, completion: completion)
     }
 
-    func fetchCoordinates(forAddress address: String, completion: @escaping (Result<PlaceMark>) -> Void) {
+    func fetchCoordinates(forAddress address: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void) {
         geocoder.geocodeAddressString(address) { (placemarks, error) in
             if let error = error {
                 guard let clError = error as? CLError else { fatalError("Error should be of type CLError") }
@@ -113,7 +113,7 @@ class WWLocationService: LocationService {
         }
     }
 
-    func autocomplete(_ text: String, completion: @escaping (Result<CLPlacemark>) -> Void) {
+    func autocomplete(_ text: String, completion: @escaping (Result<CLPlacemark, LocationManager.ErrorReason>) -> Void) {
         // placeDetail maybe a placeID (for Google) or a full address string already completed using partialMatch search.
         LocationManager.shared.autocomplete(partialMatch: .placeDetail("Piazza della Repubblica, Roma"), service: .apple(nil)) { result in
             switch result {
@@ -128,7 +128,7 @@ class WWLocationService: LocationService {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        completion(Result.failure(LocationServiceError.locationPlacemarkError))
+                        completion(.failure(.noData(nil)))
                     }
                 }
             }
