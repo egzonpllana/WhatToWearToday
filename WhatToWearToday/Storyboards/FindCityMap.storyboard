@@ -87,13 +87,13 @@
                                 <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yiz-Vl-sIQ">
-                                        <rect key="frame" x="20" y="20" width="374" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I1A-Ma-Oea">
-                                                <rect key="frame" x="0.0" y="2" width="374" height="36"/>
+                                                <rect key="frame" x="0.0" y="8" width="414" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMm-bw-7yP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="Qvq-dj-zcn"/>
                                                         </constraints>
@@ -102,14 +102,24 @@
                                                         <state key="normal" title="Choose a city">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="cityDetailsPressed:" destination="bHT-d7-Bgw" eventType="touchUpInside" id="Dsf-0M-Drh"/>
+                                                        </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search or tap on map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydM-17-I0E">
-                                                        <rect key="frame" x="0.0" y="22" width="374" height="14"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A44-XO-iaZ">
+                                                        <rect key="frame" x="0.0" y="22" width="414" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="6QL-AL-C0B"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="12"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Search or tap on map">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cityDetailsPressed:" destination="bHT-d7-Bgw" eventType="touchUpInside" id="Kma-ro-oaT"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -117,11 +127,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yiz-Vl-sIQ" secondAttribute="bottom" id="6Xi-hR-qNU"/>
                                     <constraint firstAttribute="height" constant="60" id="BbA-mM-mY6"/>
-                                    <constraint firstItem="yiz-Vl-sIQ" firstAttribute="leading" secondItem="dAM-ft-DNm" secondAttribute="leading" constant="20" symbolic="YES" id="Dum-rT-Qra"/>
-                                    <constraint firstItem="yiz-Vl-sIQ" firstAttribute="top" secondItem="dAM-ft-DNm" secondAttribute="top" constant="20" symbolic="YES" id="FcU-yR-ZH0"/>
-                                    <constraint firstAttribute="bottom" secondItem="yiz-Vl-sIQ" secondAttribute="bottom" id="OsA-wn-j55"/>
-                                    <constraint firstAttribute="trailing" secondItem="yiz-Vl-sIQ" secondAttribute="trailing" constant="20" symbolic="YES" id="esj-iG-67b"/>
+                                    <constraint firstItem="yiz-Vl-sIQ" firstAttribute="top" secondItem="dAM-ft-DNm" secondAttribute="top" id="Td2-jj-5Nf"/>
+                                    <constraint firstAttribute="trailing" secondItem="yiz-Vl-sIQ" secondAttribute="trailing" id="eU1-hi-2Dx"/>
+                                    <constraint firstItem="yiz-Vl-sIQ" firstAttribute="leading" secondItem="dAM-ft-DNm" secondAttribute="leading" id="nsv-Bf-fvA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="topLeftCorner" value="YES"/>
@@ -166,8 +176,8 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="choosenCityFooterButton" destination="wMm-bw-7yP" id="p8r-rS-fsG"/>
-                        <outlet property="cityDescriptionFooterLabel" destination="ydM-17-I0E" id="X91-mp-43J"/>
+                        <outlet property="choosenCityButton" destination="wMm-bw-7yP" id="p8r-rS-fsG"/>
+                        <outlet property="cityDescriptionButton" destination="A44-XO-iaZ" id="yj3-IC-Ys9"/>
                         <outlet property="mapView" destination="As0-YR-Pts" id="Xsq-u8-lkn"/>
                         <outlet property="searchCityTextField" destination="x9r-dm-ZHZ" id="gV3-Cf-jvW"/>
                         <segue destination="xzr-hy-ZIH" kind="presentation" identifier="cityDetails" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="0EB-vI-HG1"/>
@@ -182,15 +192,59 @@
         <scene sceneID="Ohe-fG-d53">
             <objects>
                 <tableViewController storyboardIdentifier="WWCityDetailsTableViewController" id="xzr-hy-ZIH" customClass="WWCityDetailsTableViewController" customModule="WhatToWearToday" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSs-81-F0m">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSs-81-F0m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="separatorColor" red="0.45098039220000002" green="0.4941176471" blue="0.54117647059999996" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ARu-tQ-AzF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hsV-Fl-MGt">
+                                    <rect key="frame" x="152" y="20" width="110" height="43.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11Z-wF-umK">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="27"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nY-kJ-H2X">
+                                            <rect key="frame" x="0.0" y="27" width="110" height="16.5"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="hsV-Fl-MGt" firstAttribute="centerX" secondItem="ARu-tQ-AzF" secondAttribute="centerX" id="NGR-fY-WVC"/>
+                                <constraint firstItem="hsV-Fl-MGt" firstAttribute="centerY" secondItem="ARu-tQ-AzF" secondAttribute="centerY" id="kHo-9g-cqT"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="t5H-Ug-x0s">
+                            <rect key="frame" x="0.0" y="209" width="414" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather your way by:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRv-jf-7ch">
+                                    <rect key="frame" x="153" y="10" width="108" height="13"/>
+                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="11"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="XRv-jf-7ch" firstAttribute="centerX" secondItem="t5H-Ug-x0s" secondAttribute="centerX" id="e2B-6A-t4Y"/>
+                                <constraint firstItem="XRv-jf-7ch" firstAttribute="centerY" secondItem="t5H-Ug-x0s" secondAttribute="centerY" id="zPd-W2-zyv"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="B8n-N1-se9">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityDetailsTableViewCell" rowHeight="70" id="B8n-N1-se9" customClass="CityDetailsTableViewCell" customModule="WhatToWearToday" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="111" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B8n-N1-se9" id="eDP-J9-Pgh">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -208,16 +262,16 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-nQ-cC5">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-nQ-cC5">
                                                             <rect key="frame" x="286.5" y="0.0" width="75.5" height="37.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="17°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-M1-hlA">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-M1-hlA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="75.5" height="24.5"/>
                                                                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="21"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Feels like: 15°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szo-xl-Otd">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: 15°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szo-xl-Otd">
                                                                     <rect key="frame" x="0.0" y="24.5" width="75.5" height="13"/>
                                                                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="11"/>
                                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -231,8 +285,9 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstItem="qA6-ad-RdN" firstAttribute="leading" secondItem="LPS-iw-Rbq" secondAttribute="leading" constant="24" id="7If-YI-PHg"/>
-                                                <constraint firstItem="qA6-ad-RdN" firstAttribute="centerY" secondItem="LPS-iw-Rbq" secondAttribute="centerY" id="SUs-XP-K7g"/>
                                                 <constraint firstAttribute="trailing" secondItem="qA6-ad-RdN" secondAttribute="trailing" constant="12" id="cUH-of-4vs"/>
+                                                <constraint firstAttribute="bottom" secondItem="qA6-ad-RdN" secondAttribute="bottom" constant="12" id="o5I-GB-h5H"/>
+                                                <constraint firstItem="qA6-ad-RdN" firstAttribute="top" secondItem="LPS-iw-Rbq" secondAttribute="top" constant="12.5" id="uqX-6w-rat"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -254,6 +309,11 @@
                                         <constraint firstAttribute="trailing" secondItem="LPS-iw-Rbq" secondAttribute="trailing" constant="8" id="dzi-Za-Iiz"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="v5O-1K-7kY" id="giT-EC-O0m"/>
+                                    <outlet property="feelsLikeLabel" destination="szo-xl-Otd" id="chq-zQ-gcZ"/>
+                                    <outlet property="temperatureLabel" destination="1HS-M1-hlA" id="eWn-UV-3rO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

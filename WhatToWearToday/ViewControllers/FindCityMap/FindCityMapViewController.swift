@@ -20,8 +20,12 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     @IBOutlet weak var searchCityTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var choosenCityFooterButton: UIButton!
-    @IBOutlet weak var cityDescriptionFooterLabel: UILabel!
+    @IBOutlet weak var choosenCityButton: UIButton!
+    @IBOutlet weak var cityDescriptionButton: UIButton!
+
+    // MARK: - Properties
+
+    var choosenCity: CityDetailsModel?
 
     // MARK: - View life cycle
 
@@ -77,14 +81,14 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
                 if let streetName = street, let cityName = city {
                     self.searchCityTextField.text = "\(streetName), \(cityName)"
-                    self.choosenCityFooterButton.setTitle("\(streetName), \(cityName)", for: .normal)
-                    self.cityDescriptionFooterLabel.text = "See more details"
+                    self.choosenCityButton.setTitle("\(streetName), \(cityName)", for: .normal)
+                    self.cityDescriptionButton.setTitle("See more details", for: .normal)
                     self.centerMapOnLocation(location: location)
                     self.addAnnotation(inCoordinates: location.coordinate)
                     self.searchCityTextField.resignFirstResponder()
                 } else {
-                    self.choosenCityFooterButton.setTitle("Choose a city", for: .normal)
-                    self.cityDescriptionFooterLabel.text = "Search or tap on map"
+                    self.choosenCityButton.setTitle("Choose a city", for: .normal)
+                    self.cityDescriptionButton.setTitle("Search or tap on map", for: .normal)
                 }
             }
         }
@@ -128,6 +132,10 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
             getLocationPlacemark(address: text)
         }
     }
+
+    @IBAction func cityDetailsPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: .cityDetails, sender: nil)
+    }
 }
 
 // MARK: - MKMapViewDelegate
@@ -145,5 +153,23 @@ extension FindCityMapViewController: MKMapViewDelegate {
         }
 
         return annotationView
+    }
+}
+
+// MARK: - Navigation
+
+extension FindCityMapViewController: SegueHandlerType {
+    enum SegueIdentifier: String {
+        case cityDetails
+    }
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifierForSegue(segue: segue) {
+        case .cityDetails:
+            if let reminderDetailsViewController = segue.destination as? WWCityDetailsTableViewController, let cityDetails = sender as? CityDetailsModel {
+                reminderDetailsViewController.city = cityDetails
+            }
+        }
     }
 }

@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import MapKit
 
 class WWCityDetailsTableViewController: UITableViewController {
 
+    // MARK: - Properties
+
+    var city: CityDetailsModel!
+
+    // MARK: - View life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Do any additional setup after loading the view.
     }
 }
 
 // MARK: - Table view data source
+
 extension WWCityDetailsTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cityDetailsCell: CityDetailsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        //cityDetailsCell.populateCell(withCityDetails: city.forecast[indexPath.row])
+        return cityDetailsCell
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 7
     }
 }
