@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		13992219BCC0736164BF7428 /* Pods_WhatToWearToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */; };
 		5203BDC3242615B500FF4DDF /* FindCityMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5203BDC2242615B500FF4DDF /* FindCityMap.storyboard */; };
+		5203BDC72426173B00FF4DDF /* WWCityDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203BDC62426173B00FF4DDF /* WWCityDetailsTableViewController.swift */; };
 		52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C912424D7A200762F9A /* AppDelegate.swift */; };
 		52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C932424D7A200762F9A /* SceneDelegate.swift */; };
 		52CD4C992424D7A200762F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4C972424D7A200762F9A /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		2A5243026BCB3BBA0BA62AF3 /* Pods-WhatToWearToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWearToday.debug.xcconfig"; path = "Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday.debug.xcconfig"; sourceTree = "<group>"; };
 		5203BDC2242615B500FF4DDF /* FindCityMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCityMap.storyboard; sourceTree = "<group>"; };
+		5203BDC62426173B00FF4DDF /* WWCityDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WWCityDetailsTableViewController.swift; sourceTree = "<group>"; };
 		52CD4C8E2424D7A200762F9A /* WhatToWearToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWearToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CD4C912424D7A200762F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CD4C932424D7A200762F9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */,
+				5203BDC62426173B00FF4DDF /* WWCityDetailsTableViewController.swift */,
 			);
 			path = FindCityMap;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				52CD4CCE2425392300762F9A /* MockLocationService.swift in Sources */,
 				52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */,
 				52CD4CB424250FFE00762F9A /* UIRoundedView.swift in Sources */,
+				5203BDC72426173B00FF4DDF /* WWCityDetailsTableViewController.swift in Sources */,
 				52CD4CD02425392A00762F9A /* WWLocationService.swift in Sources */,
 				52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */,
 				52CD4CC62425386E00762F9A /* Dependency.swift in Sources */,

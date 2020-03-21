@@ -170,12 +170,101 @@
                         <outlet property="cityDescriptionFooterLabel" destination="ydM-17-I0E" id="X91-mp-43J"/>
                         <outlet property="mapView" destination="As0-YR-Pts" id="Xsq-u8-lkn"/>
                         <outlet property="searchCityTextField" destination="x9r-dm-ZHZ" id="gV3-Cf-jvW"/>
+                        <segue destination="xzr-hy-ZIH" kind="presentation" identifier="cityDetails" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="0EB-vI-HG1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUe-P9-IcC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="edZ-ak-1kg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="124.55357142857142"/>
+        </scene>
+        <!--City Details Table View Controller-->
+        <scene sceneID="Ohe-fG-d53">
+            <objects>
+                <tableViewController storyboardIdentifier="WWCityDetailsTableViewController" id="xzr-hy-ZIH" customClass="WWCityDetailsTableViewController" customModule="WhatToWearToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSs-81-F0m">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="separatorColor" red="0.45098039220000002" green="0.4941176471" blue="0.54117647059999996" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="B8n-N1-se9">
+                                <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B8n-N1-se9" id="eDP-J9-Pgh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LPS-iw-Rbq" customClass="UIExtendedView" customModule="WhatToWearToday" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="4" width="398" height="62"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qA6-ad-RdN">
+                                                    <rect key="frame" x="24" y="12.5" width="362" height="37.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5O-1K-7kY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="37.5"/>
+                                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-nQ-cC5">
+                                                            <rect key="frame" x="286.5" y="0.0" width="75.5" height="37.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="17°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HS-M1-hlA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="75.5" height="24.5"/>
+                                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="21"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Feels like: 15°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szo-xl-Otd">
+                                                                    <rect key="frame" x="0.0" y="24.5" width="75.5" height="13"/>
+                                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="11"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="qA6-ad-RdN" firstAttribute="leading" secondItem="LPS-iw-Rbq" secondAttribute="leading" constant="24" id="7If-YI-PHg"/>
+                                                <constraint firstItem="qA6-ad-RdN" firstAttribute="centerY" secondItem="LPS-iw-Rbq" secondAttribute="centerY" id="SUs-XP-K7g"/>
+                                                <constraint firstAttribute="trailing" secondItem="qA6-ad-RdN" secondAttribute="trailing" constant="12" id="cUH-of-4vs"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.080000000000000002"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="LPS-iw-Rbq" secondAttribute="bottom" constant="4" id="IAm-1p-6bE"/>
+                                        <constraint firstItem="LPS-iw-Rbq" firstAttribute="leading" secondItem="eDP-J9-Pgh" secondAttribute="leading" constant="8" id="J8U-gs-C4a"/>
+                                        <constraint firstItem="LPS-iw-Rbq" firstAttribute="top" secondItem="eDP-J9-Pgh" secondAttribute="top" constant="4" id="QNF-Zd-0ii"/>
+                                        <constraint firstAttribute="trailing" secondItem="LPS-iw-Rbq" secondAttribute="trailing" constant="8" id="dzi-Za-Iiz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xzr-hy-ZIH" id="YU7-Ul-0WV"/>
+                            <outlet property="delegate" destination="xzr-hy-ZIH" id="Co1-XG-XYb"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYb-Uw-6rK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2821.739130434783" y="124.55357142857142"/>
         </scene>
     </scenes>
     <resources>
