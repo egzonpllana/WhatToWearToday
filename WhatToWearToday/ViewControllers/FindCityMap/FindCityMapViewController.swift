@@ -77,11 +77,10 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
                 debugPrint("Error :", error, #line)
             case .success(let places):
                 let city = places.first?.locality
-                let street = places.first?.thoroughfare
 
-                if let streetName = street, let cityName = city {
-                    self.searchCityTextField.text = "\(streetName), \(cityName)"
-                    self.choosenCityButton.setTitle("\(streetName), \(cityName)", for: .normal)
+                if let cityName = city {
+                    self.searchCityTextField.text = cityName
+                    self.choosenCityButton.setTitle(cityName, for: .normal)
                     self.cityDescriptionButton.setTitle("See more details", for: .normal)
                     self.centerMapOnLocation(location: location)
                     self.addAnnotation(inCoordinates: location.coordinate)
@@ -105,7 +104,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     /// Focus on center of the MKMapView
     private func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
-                                                       latitudinalMeters: 4000, longitudinalMeters: 4000)
+                                                       latitudinalMeters: 15000, longitudinalMeters: 15000)
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
