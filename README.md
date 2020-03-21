@@ -13,7 +13,20 @@ WhatToWearToday - iOS App.
     * [Bitbucket repository](https://bitbucket.org/)
 
 ## Developers ##
+
     * Egzon Pllana - 22/03/2020
+    
+## Features ##
+
+    - Protocol & Object Oriented programming
+    - Dependency Injection
+    - Location with GPS, otherwise will use IP location
+    - SegueHandler
+    - Storyboard Identifiable
+    - Codable
+    - Completion with  Result type
+    - Storyboard based
+    - MapView anotations
     
 ## Cocoapods ##
 
