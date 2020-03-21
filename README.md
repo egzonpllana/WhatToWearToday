@@ -27,6 +27,7 @@ WhatToWearToday - iOS App.
     - Completion with  Result type
     - Storyboard based
     - MapView anotations
+    - Location via GPS or via IP
     
 ## Cocoapods ##
 
