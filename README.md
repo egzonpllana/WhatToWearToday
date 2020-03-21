@@ -56,3 +56,11 @@ WhatToWearToday - iOS App.
 ### Today Weather ###
 ![TodayWeather](https://user-images.githubusercontent.com/27929436/77238762-9f1d7200-6bd3-11ea-876b-17f59394a7ab.png)
 
+### Search with City name ###
+![CityNameSearch](https://user-images.githubusercontent.com/27929436/77238789-e3a90d80-6bd3-11ea-8781-97701ff81cf4.png)
+
+### City on Map ###
+![CityOnMap](https://user-images.githubusercontent.com/27929436/77238807-fb809180-6bd3-11ea-973d-18bcf211ff9c.png)
+
+### City Forecast for next 5 days ###
+![CityForecast5Days](https://user-images.githubusercontent.com/27929436/77238817-0cc99e00-6bd4-11ea-93b3-ece4b05ce285.png)
