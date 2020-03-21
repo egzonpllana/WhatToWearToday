@@ -14,6 +14,7 @@
 		5203BDCC24261BEF00FF4DDF /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203BDCB24261BEF00FF4DDF /* SegueHandlerType.swift */; };
 		5203BDD224261D9900FF4DDF /* CityDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203BDD124261D9900FF4DDF /* CityDetailsTableViewCell.swift */; };
 		5203BDD424261EC400FF4DDF /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5203BDD324261EC400FF4DDF /* WeatherModel.swift */; };
+		523853D02426D8A300702E97 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 523853CF2426D8A300702E97 /* README.md */; };
 		52CCFE2D24268CA00052A5D1 /* PlaceMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCFE2C24268CA00052A5D1 /* PlaceMark.swift */; };
 		52CCFE30242694E40052A5D1 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCFE2F242694E40052A5D1 /* WeatherService.swift */; };
 		52CCFE32242694EF0052A5D1 /* MockWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCFE31242694EF0052A5D1 /* MockWeatherService.swift */; };
@@ -50,6 +51,7 @@
 		5203BDCB24261BEF00FF4DDF /* SegueHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
 		5203BDD124261D9900FF4DDF /* CityDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		5203BDD324261EC400FF4DDF /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		523853CF2426D8A300702E97 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52CCFE2C24268CA00052A5D1 /* PlaceMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMark.swift; sourceTree = "<group>"; };
 		52CCFE2F242694E40052A5D1 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		52CCFE31242694EF0052A5D1 /* MockWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherService.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		52CD4C852424D7A200762F9A = {
 			isa = PBXGroup;
 			children = (
+				523853CF2426D8A300702E97 /* README.md */,
 				52CD4C902424D7A200762F9A /* WhatToWearToday */,
 				52CD4C8F2424D7A200762F9A /* Products */,
 				4A3DAF9C4EC0E9665EB15A9B /* Pods */,
@@ -361,6 +364,7 @@
 				52CD4C9E2424D7A500762F9A /* LaunchScreen.storyboard in Resources */,
 				52CD4CC0242537C800762F9A /* DEPENDENCIES.md in Resources */,
 				52CD4C9B2424D7A500762F9A /* Assets.xcassets in Resources */,
+				523853D02426D8A300702E97 /* README.md in Resources */,
 				52CCFE3A24269D830052A5D1 /* API.md in Resources */,
 				5203BDC3242615B500FF4DDF /* FindCityMap.storyboard in Resources */,
 				52CD4C992424D7A200762F9A /* Main.storyboard in Resources */,
