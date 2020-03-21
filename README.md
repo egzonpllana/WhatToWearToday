@@ -2,10 +2,10 @@
 # Swifty Protocol-Oriented with Dependency Injection #
 WhatToWearToday - iOS App.
 
-    WhatToWearToday is an app that provides weather for today, or 
-    the next 5 days for any city selected from the map or from search.
-    User location will be used from GPS if permission was given, otherwise,
-    it will be used approximate location from IP.
+    WhatToWearToday is an app that provides weather for today, or the next 5 days for any city
+    selected from the map or from search.
+    User location will be used from GPS if permission was given, otherwise,it will be used approximate
+    location from IP.
     End points that are being used are: https://api.openweathermap.org/
 
 ## Repository ##
