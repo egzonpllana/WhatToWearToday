@@ -38,14 +38,10 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         gestureRecognizer.delegate = self
         mapView.addGestureRecognizer(gestureRecognizer)
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
         // Drop pin to user current location
         getCurrentLocation()
+        
+        // Do any additional setup after loading the view.
     }
 
     // MARK: - Methods
