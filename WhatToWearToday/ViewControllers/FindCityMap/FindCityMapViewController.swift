@@ -39,15 +39,8 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        locationService.getCurrentApproximateLocation { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                debugPrint("Error :", error, #line)
-            case .success(let location):
-                self.centerMapOnLocation(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
-            }
-        }
+        // Drop pin to user current location
+        getUserCurrentLocation()
     }
 
     // MARK: - Methods

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13992219BCC0736164BF7428 /* Pods_WhatToWearToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE69C4885DF5C48EA23ACBDE /* Pods_WhatToWearToday.framework */; };
+		5203BDC3242615B500FF4DDF /* FindCityMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5203BDC2242615B500FF4DDF /* FindCityMap.storyboard */; };
 		52CD4C922424D7A200762F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C912424D7A200762F9A /* AppDelegate.swift */; };
 		52CD4C942424D7A200762F9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD4C932424D7A200762F9A /* SceneDelegate.swift */; };
 		52CD4C992424D7A200762F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52CD4C972424D7A200762F9A /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		2A5243026BCB3BBA0BA62AF3 /* Pods-WhatToWearToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToWearToday.debug.xcconfig"; path = "Target Support Files/Pods-WhatToWearToday/Pods-WhatToWearToday.debug.xcconfig"; sourceTree = "<group>"; };
+		5203BDC2242615B500FF4DDF /* FindCityMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FindCityMap.storyboard; sourceTree = "<group>"; };
 		52CD4C8E2424D7A200762F9A /* WhatToWearToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToWearToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52CD4C912424D7A200762F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52CD4C932424D7A200762F9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5203BDC4242615F800FF4DDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CB52425139B00762F9A /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5203BDC52426161A00FF4DDF /* FindCityMap */ = {
+			isa = PBXGroup;
+			children = (
+				52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */,
+			);
+			path = FindCityMap;
+			sourceTree = "<group>";
+		};
 		52CD4C852424D7A200762F9A = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +126,8 @@
 		52CD4CAB24250F7A00762F9A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				52CD4CB52425139B00762F9A /* HomeViewController.swift */,
-				52CD4CBB24251AB800762F9A /* FindCityMapViewController.swift */,
+				5203BDC4242615F800FF4DDF /* Home */,
+				5203BDC52426161A00FF4DDF /* FindCityMap */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -118,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				52CD4C972424D7A200762F9A /* Main.storyboard */,
+				5203BDC2242615B500FF4DDF /* FindCityMap.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -233,6 +252,7 @@
 				52CD4C9E2424D7A500762F9A /* LaunchScreen.storyboard in Resources */,
 				52CD4CC0242537C800762F9A /* DEPENDENCIES.md in Resources */,
 				52CD4C9B2424D7A500762F9A /* Assets.xcassets in Resources */,
+				5203BDC3242615B500FF4DDF /* FindCityMap.storyboard in Resources */,
 				52CD4C992424D7A200762F9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
