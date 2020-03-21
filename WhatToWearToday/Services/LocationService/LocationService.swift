@@ -10,25 +10,16 @@ import Foundation
 import CoreLocation
 import SwiftLocation
 
-struct PlaceMark {
-    let country: String?
-    let address: String?
-    let suburb: String?
-    let state: String?
-    let postcode: String?
-    let coordinates: (latitude: Double, longitude: Double)
+enum LocationServiceError: String, CaseIterable {
+    case locationUnknown = "Unable to obtain a location for the provided address"
 }
 
-enum LocationServiceError: String, CaseIterable {
-    
-    case locationUnknown = "Unable to obtain a location for the provided address"
-
+extension LocationServiceError {
     static func errorResponse(for clError: CLError) -> LocationServiceError {
-        // All CLError not handled properly
+        // All CLError not handled
         // Check CLError.Code to find all error cases
         return locationUnknown
     }
-
 }
 
 protocol LocationService {
