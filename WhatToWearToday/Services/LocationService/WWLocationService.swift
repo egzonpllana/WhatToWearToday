@@ -46,9 +46,9 @@ class WWLocationService: LocationService {
         }
     }
 
-    func getCurrentLocationFromGPS(desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
+    func getCurrentLocationFromGPS(subscription: LocationRequest.Subscription, desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
         // Wait 10s max after authorization has been determined
-        LocationManager.shared.locateFromGPS(.continous, accuracy: .city) { result in
+        LocationManager.shared.locateFromGPS(subscription, accuracy: desiredAccuracy) { result in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {

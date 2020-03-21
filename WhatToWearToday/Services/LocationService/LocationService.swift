@@ -18,7 +18,7 @@ protocol LocationService {
      * Details:
      - Get authorization status of type CLAuthorizationStatu
      - Parameters:
-     - no parameters
+        - no parameters
      - Completion: Boolean value
      */
     var authorizationStatus: CLAuthorizationStatus { get }
@@ -28,7 +28,7 @@ protocol LocationService {
      * Details:
      - Get user location based on the IP
      - Parameters:
-     - no parameters
+        - no parameters
      - Completion: CLLocation or LocationManager.ErrorReason
      */
     func getCurrentApproximateLocation(completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void)
@@ -38,18 +38,19 @@ protocol LocationService {
      * Details:
      - Get user location from GPS
      - Parameters:
-     - desiredAccuracy: CLLocationAccuracy
-     - useInaccurateLocationIfTimeout: Bool
+        - subscription: LocationRequest.Subscription
+        - desiredAccuracy: LocationManager.Accuracy
+        - useInaccurateLocationIfTimeout: Bool
      - Completion: CLLocation or LocationManager.ErrorReason
      */
-    func getCurrentLocationFromGPS(desiredAccuracy: CLLocationAccuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void)
+    func getCurrentLocationFromGPS(subscription: LocationRequest.Subscription, desiredAccuracy: LocationManager.Accuracy, useInaccurateLocationIfTimeout: Bool, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void)
 
     /*
      **Get CLPlacemark from CLLocationCoordinate2D**
      * Details:
      - Convert CLLocationCoordinate2D to [CLPlacemark]
      - Parameters:
-     - coordinate: CLLocationCoordinate2D
+        - coordinate: CLLocationCoordinate2D
      - Completion: [CLPlacemark] or LocationManager.ErrorReason
      */
     func reverseGeocode(coordinate: CLLocationCoordinate2D, completion: @escaping (Result<[CLPlacemark], LocationManager.ErrorReason>) -> Void)
@@ -59,7 +60,7 @@ protocol LocationService {
      * Details:
      - Provide suggestions for places or address in a particular region
      - Parameters:
-     - text: String
+        - text: String
      - Completion: CLPlacemark or LocationManager.ErrorReason
      */
     func autocomplete(_ text: String, completion: @escaping (Result<CLPlacemark, LocationManager.ErrorReason>) -> Void)
@@ -69,10 +70,10 @@ protocol LocationService {
      * Details:
      - Convert location informations to PlaceMark model
      - Parameters:
-     - address: String
-     - suburb: String
-     - state: String
-     - postcode: String
+        - address: String
+        - suburb: String
+        - state: String
+        - postcode: String
      - Completion: PlaceMark or LocationServiceError
      */
     func reverseGeocodeAddress(address: String, suburb: String, state: String, postcode: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void)
@@ -82,15 +83,15 @@ protocol LocationService {
      * Details:
      - Convert location given in String type to PlaceMark model
      - Parameters:
-     - address: String
+        - address: String
      - Completion: PlaceMark or LocationServiceError
      */
     func fetchCoordinates(forAddress address: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void)
 }
 
 extension LocationService {
-    func getCurrentLocationFromGPS(desiredAccuracy: CLLocationAccuracy = kCLLocationAccuracyThreeKilometers, useInaccurateLocationIfTimeout: Bool = true, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
-        self.getCurrentLocationFromGPS(desiredAccuracy: desiredAccuracy, useInaccurateLocationIfTimeout: useInaccurateLocationIfTimeout, completion: completion)
+    func getCurrentLocationFromGPS(subscription: LocationRequest.Subscription = .continous, desiredAccuracy: LocationManager.Accuracy = .city, useInaccurateLocationIfTimeout: Bool = true, completion: @escaping (Result<CLLocation, LocationManager.ErrorReason>) -> Void) {
+        self.getCurrentLocationFromGPS(subscription: .continous, desiredAccuracy: .city, useInaccurateLocationIfTimeout: useInaccurateLocationIfTimeout, completion: completion)
     }
 }
 

@@ -44,7 +44,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         super.viewDidAppear(animated)
 
         // Drop pin to user current location
-        getUserCurrentLocation()
+        getCurrentLocation()
     }
 
     // MARK: - Methods
@@ -57,7 +57,21 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     }
 
     /// Get user location with LocationService
-    func getUserCurrentLocation() {
+    func getCurrentLocation() {
+        locationService.getCurrentLocationFromGPS(subscription: .oneShot, desiredAccuracy: .city, useInaccurateLocationIfTimeout: true)  { [weak self] (result) in
+            //locationService.getCurrentApproximateLocation { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+                self.getApproximateLocation()
+            case .success(let location):
+                self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            }
+        }
+    }
+
+    func getApproximateLocation() {
         locationService.getCurrentApproximateLocation { [weak self] (result) in
             guard let self = self else { return }
             switch result {
@@ -123,7 +137,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     // MARK: - Actions
     
     @IBAction func locateMeButtonPressed(_ sender: Any) {
-        getUserCurrentLocation()
+        getCurrentLocation()
     }
 
     @IBAction func locationTextFieldPrimaryActionTriggered(_ sender: Any) {

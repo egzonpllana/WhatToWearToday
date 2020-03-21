@@ -36,7 +36,7 @@ class HomeViewController: UIViewController , HasDependencies {
         loadCurrentDay()
 
         // Get user location
-        getUserCurrentLocation()
+        getCurrentLocation()
 
         // Do any additional setup after loading the view.
     }
@@ -75,7 +75,21 @@ class HomeViewController: UIViewController , HasDependencies {
     }
 
     /// Get user location with LocationService
-    private func getUserCurrentLocation() {
+    private func getCurrentLocation() {
+        locationService.getCurrentLocationFromGPS(subscription: .oneShot, desiredAccuracy: .city, useInaccurateLocationIfTimeout: true)  { [weak self] (result) in
+            //locationService.getCurrentApproximateLocation { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error :", error, #line)
+                self.getApproximateLocation()
+            case .success(let location):
+                self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+            }
+        }
+    }
+
+    private func getApproximateLocation() {
         locationService.getCurrentApproximateLocation { [weak self] (result) in
             guard let self = self else { return }
             switch result {
