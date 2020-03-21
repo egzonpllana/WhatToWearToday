@@ -26,10 +26,20 @@ class CityDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func populateCell(withCityDetails city: WeatherModel) {
-        self.dayLabel.text = ""
-        self.temperatureLabel.text = ""
-        self.feelsLikeLabel.text = ""
+    func populateCell(withCityWeather weather: WeatherModel) {
+        guard let forecast = weather.main, let timeStamp = weather.dayTimeStamp else {
+            return
+        }
+
+        let timestampToDate = Date(timeIntervalSince1970: Double(timeStamp)).readableDate
+        self.dayLabel.text = timestampToDate
+
+        // Beautify dummy data from server, ex 284.21 -> 28°
+        let temperature = String(Int(round(forecast.temp/10))) + "°"
+        let feelsLike = "Feels like " + String(Int(round(forecast.feelsLike/10))) + "°"
+
+        self.temperatureLabel.text = temperature
+        self.feelsLikeLabel.text = feelsLike
     }
 
 }

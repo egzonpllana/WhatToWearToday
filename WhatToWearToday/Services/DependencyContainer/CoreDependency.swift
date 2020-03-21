@@ -10,10 +10,15 @@ import UIKit
 
 protocol Dependency {
     func locationService() -> LocationService
+    func weatherService() -> WeatherService
 }
 
 class CoreDependency: Dependency {
     func locationService() -> LocationService {
         return MockLocationService()
+    }
+
+    func weatherService() -> WeatherService {
+        return MockWeatherService()
     }
 }

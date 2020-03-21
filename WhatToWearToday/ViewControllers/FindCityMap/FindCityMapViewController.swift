@@ -15,6 +15,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     // MARK: - Dependencies
 
     private lazy var locationService: LocationService = dependencies.locationService()
+    private lazy var weatherService: WeatherService = dependencies.weatherService()
 
     // MARK: - Outlets
 
@@ -25,7 +26,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
 
     // MARK: - Properties
 
-    var choosenCity: CityDetailsModel?
+    var cityForecast: CityDetailsModel?
 
     // MARK: - View life cycle
 
@@ -56,7 +57,22 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         reverseGeocode(location: CLLocation(latitude: locationInMap.latitude, longitude: locationInMap.longitude))
     }
 
-    /// Get user location with LocationService
+    /// Get weather data from API
+    private func getWeatherData(forCity city: String) {
+        let cityNameLowercased = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil).lowercased()
+        weatherService.cityWeatherForFiveDays(cityName: cityNameLowercased) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error: ", error)
+                self.cityForecast = nil
+            case .success(let cityForecast):
+                self.cityForecast = cityForecast
+            }
+        }
+    }
+
+    /// Get user location with GPS
     func getCurrentLocation() {
         locationService.getCurrentLocationFromGPS(subscription: .oneShot, desiredAccuracy: .city, useInaccurateLocationIfTimeout: true)  { [weak self] (result) in
             //locationService.getCurrentApproximateLocation { [weak self] (result) in
@@ -71,6 +87,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
         }
     }
 
+    /// Get user location with IP
     func getApproximateLocation() {
         locationService.getCurrentApproximateLocation { [weak self] (result) in
             guard let self = self else { return }
@@ -97,9 +114,11 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
                     self.choosenCityButton.setTitle(cityName, for: .normal)
                     self.cityDescriptionButton.setTitle("See more details", for: .normal)
                     self.centerMapOnLocation(location: location)
+                    self.getWeatherData(forCity: cityName)
                     self.addAnnotation(inCoordinates: location.coordinate)
                     self.searchCityTextField.resignFirstResponder()
                 } else {
+                    self.cityForecast = nil
                     self.choosenCityButton.setTitle("Choose a city", for: .normal)
                     self.cityDescriptionButton.setTitle("Search or tap on map", for: .normal)
                 }
@@ -147,7 +166,9 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
     }
 
     @IBAction func cityDetailsPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: .cityDetails, sender: nil)
+        if cityForecast != nil {
+            self.performSegue(withIdentifier: .cityDetails, sender: cityForecast)
+        }
     }
 }
 
@@ -174,6 +195,7 @@ extension FindCityMapViewController: MKMapViewDelegate {
 extension FindCityMapViewController: SegueHandlerType {
     enum SegueIdentifier: String {
         case cityDetails
+        case prepareForUnwindToHome
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -183,6 +205,8 @@ extension FindCityMapViewController: SegueHandlerType {
             if let reminderDetailsViewController = segue.destination as? WWCityDetailsTableViewController, let cityDetails = sender as? CityDetailsModel {
                 reminderDetailsViewController.city = cityDetails
             }
+        case .prepareForUnwindToHome:
+            break
         }
     }
 }

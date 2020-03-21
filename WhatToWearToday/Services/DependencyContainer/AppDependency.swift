@@ -13,4 +13,9 @@ class AppDependency: CoreDependency {
     override func locationService() -> LocationService {
         return WWLocationService(googleAPIKey: "AIzaSyB3XaZORxNCyRShZy01-AdfaUwPdX41Y1Q")
     }
+
+    // MARK: - WeatherService
+    override func weatherService() -> WeatherService {
+        return WWWeatherService()
+    }
 }

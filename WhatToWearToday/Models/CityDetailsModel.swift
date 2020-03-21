@@ -10,5 +10,9 @@ import Foundation
 
 struct CityDetailsModel: Codable {
     let name: String
-    let forecast: [WeatherModel]
+    let forecast: ForecastModel
+
+    enum CodingKeys: String, CodingKey {
+        case name, forecast
+    }
 }

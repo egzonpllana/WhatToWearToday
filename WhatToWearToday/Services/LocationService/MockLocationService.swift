@@ -13,8 +13,8 @@ import SwiftLocation
 
 class MockLocationService: LocationService {
 
-    lazy var samplePlacemark: CLPlacemark = CLPlacemark(location: CLLocation(latitude: -33.865, longitude: 151.209444),
-                                                        name: "Sydney",
+    lazy var samplePlacemark: CLPlacemark = CLPlacemark(location: CLLocation(latitude: -13.865, longitude: 11.209444),
+                                                        name: "Pristina",
                                                         postalAddress: nil)
 
     var authorizationStatus: CLAuthorizationStatus { return CLLocationManager.authorizationStatus() }
@@ -57,15 +57,13 @@ class MockLocationService: LocationService {
     func reverseGeocodeAddress(address: String, suburb: String, state: String, postcode: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void) {
         // simulate network latency
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let placeMark = PlaceMark(country: "Australia", address: address, suburb: suburb, state: state, postcode: postcode, coordinates: (-32.0558714, 115.7461693))
-            completion(Result.success(placeMark))
+            completion(Result.success(placeMarkStubData))
         }
     }
 
     func fetchCoordinates(forAddress address: String, completion: @escaping (Result<PlaceMark, LocationServiceError>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let placeMark = PlaceMark(country: "Australia", address: "Perth", suburb: "Montes", state: "Australia", postcode: "6000", coordinates: (-32.0558714, 115.7461693))
-            completion(Result.success(placeMark))
+            completion(Result.success(placeMarkStubData))
         }
     }
 

@@ -8,5 +8,6 @@ target 'WhatToWearToday' do
   # Pods for WhatToWearToday
   pod 'SwiftLocation'
   pod 'AHKNavigationController'
+  pod 'Alamofire', '4.8.2'
 
 end

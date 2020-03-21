@@ -1,20 +1,24 @@
 PODS:
   - AHKNavigationController (1.3)
+  - Alamofire (4.8.2)
   - SwiftLocation (4.2.0)
 
 DEPENDENCIES:
   - AHKNavigationController
+  - Alamofire (= 4.8.2)
   - SwiftLocation
 
 SPEC REPOS:
   trunk:
     - AHKNavigationController
+    - Alamofire
     - SwiftLocation
 
 SPEC CHECKSUMS:
   AHKNavigationController: 3b8d5177e1a9c6dde5d16964b97781dea88457bf
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   SwiftLocation: 609ac8859f2c5d48a6cadd2a58c63b1dae02dc25
 
-PODFILE CHECKSUM: f2d067697a030939a22c863f76a8692fe5042b68
+PODFILE CHECKSUM: dff90706f5b19b5943fb7f3c477cb20e325f132a
 
 COCOAPODS: 1.9.0

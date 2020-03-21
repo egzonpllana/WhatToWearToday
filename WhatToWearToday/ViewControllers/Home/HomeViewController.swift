@@ -18,6 +18,7 @@ class HomeViewController: UIViewController , HasDependencies {
     // MARK: - Dependencies
 
     private lazy var locationService: LocationService = dependencies.locationService()
+    private lazy var weatherService: WeatherService = dependencies.weatherService()
 
     // MARK: - Outlets
 
@@ -74,6 +75,28 @@ class HomeViewController: UIViewController , HasDependencies {
         dayLabel.text = dateFormatter.string(from: date)
     }
 
+    private func getWeatherData() {
+        weatherService.cityWeatherToday(cityName: "California") { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                debugPrint("Error: ", error)
+            case .success(let cityForecast):
+                guard let forecast = cityForecast.forecast.list.first, let cityTemperature = forecast.main else {
+                    debugPrint("There was an error getting city forecast!", #line)
+                    return
+                }
+
+                // Beautify dummy data from server, ex 284.21 -> 28°
+                let temperature = String(Int(round(cityTemperature.temp/10))) + "°"
+                let feelsLike = "Feels like " + String(Int(round(cityTemperature.feelsLike/10))) + "°"
+
+                self.temperatureLabel.text = temperature
+                self.tempFeelsLikeLabel.text = feelsLike
+            }
+        }
+    }
+
     /// Get user location with LocationService
     private func getCurrentLocation() {
         locationService.getCurrentLocationFromGPS(subscription: .oneShot, desiredAccuracy: .city, useInaccurateLocationIfTimeout: true)  { [weak self] (result) in
@@ -81,10 +104,10 @@ class HomeViewController: UIViewController , HasDependencies {
             guard let self = self else { return }
             switch result {
             case .failure(let error):
-                debugPrint("Error :", error, #line)
-                self.getApproximateLocation()
+                debugPrint("Error: ", error)
             case .success(let location):
                 self.reverseGeocode(location: CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                self.getWeatherData()
             }
         }
     }
