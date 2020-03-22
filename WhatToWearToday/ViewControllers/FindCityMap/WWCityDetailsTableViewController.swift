@@ -40,8 +40,7 @@ extension WWCityDetailsTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cityDetailsCell: CityDetailsTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        let weatherData = forecast.list
-        cityDetailsCell.populateCell(withCityWeather: weatherData[indexPath.row])
+        cityDetailsCell.populateCell(withCityWeather: forecast.list[indexPath.row])
         return cityDetailsCell
     }
 
