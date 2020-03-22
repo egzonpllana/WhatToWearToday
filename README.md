@@ -74,7 +74,7 @@ WhatToWearToday - iOS App.
 ![CityNameSearch](https://user-images.githubusercontent.com/27929436/77238789-e3a90d80-6bd3-11ea-8781-97701ff81cf4.png)
 
 ### City on Map ###
-![CityOnMap](https://user-images.githubusercontent.com/27929436/77238807-fb809180-6bd3-11ea-973d-18bcf211ff9c.png)
+![CityOnMap](https://user-images.githubusercontent.com/27929436/77257895-67680600-6c77-11ea-9212-23429c659f06.png)
 
 ### City Forecast for next 5 days ###
 ![CityForecast5Days](https://user-images.githubusercontent.com/27929436/77238817-0cc99e00-6bd4-11ea-93b3-ece4b05ce285.png)
