@@ -64,8 +64,7 @@ class FindCityMapViewController: UIViewController, UIGestureRecognizerDelegate, 
             case .success(let cityForecast):
                 self.cityForecast = cityForecast
                 if let city = cityForecast.list.first, let weather = city.main {
-                    // Beautify dummy data from server, ex 284.21 -> 28°
-                    let temperature = String(Int(round(weather.temp/10))) + "°"
+                    let temperature = String(weather.tempToCelsius) + "°"
                     let cityTemp = cityForecast.city.name + " - " + temperature
                     self.choosenCityButton.setTitle(cityTemp, for: .normal)
                 }

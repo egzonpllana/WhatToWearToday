@@ -19,6 +19,8 @@ class WWWeatherService: WeatherService {
                 // Forecast api returns weather every 3hours, which menas 8 values per day
                 // We need only one value per day
 
+                debugPrint("Server Forecast Data: ", forecastData)
+
                 var forecast = forecastData
                 let itemsAtEvenIndices = forecastData.list.enumerated().compactMap { tuple in
                   tuple.offset.isMultiple(of: 8) ? tuple.element : nil

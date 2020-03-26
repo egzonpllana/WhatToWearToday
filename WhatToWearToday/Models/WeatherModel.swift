@@ -37,3 +37,13 @@ struct DayWeatherModel: Codable {
         case temp, feelsLike = "feels_like"
     }
 }
+
+extension DayWeatherModel {
+    var tempToCelsius: Double {
+        return round(Double((temp - 273.15)))
+    }
+
+    var feelsLikeToCelsius: Double {
+        return round(Double((feelsLike - 273.15)))
+    }
+}

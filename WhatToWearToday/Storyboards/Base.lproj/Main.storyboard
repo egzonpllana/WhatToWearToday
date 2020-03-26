@@ -152,6 +152,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsg-ox-vKY">
+                                <rect key="frame" x="207" y="664" width="187" height="36"/>
+                                <color key="backgroundColor" red="0.83943694830000004" green="0.52506101130000005" blue="0.67694097760000005" alpha="0.15047940340909091" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Bkx-KL-94X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="See forecast in 5 days">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="forecastInNextDaysButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gye-d1-cM6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -159,12 +174,14 @@
                             <constraint firstItem="eXl-6Z-mdn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7TY-Mt-07e"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BAj-Xp-cOR"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="BaH-Wl-Sao"/>
+                            <constraint firstItem="frE-1l-XVn" firstAttribute="top" secondItem="bsg-ox-vKY" secondAttribute="bottom" id="BeF-M7-b3v"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EgE-oy-XJD"/>
                             <constraint firstItem="sNw-Mu-p7k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q51-mD-68L"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tya-LS-wq6"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="top" secondItem="m4M-Mo-xtc" secondAttribute="bottom" constant="30" id="Uvx-OI-xcW"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wi2-H0-47S"/>
                             <constraint firstItem="sNw-Mu-p7k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="c9M-d1-VrO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bsg-ox-vKY" secondAttribute="trailing" constant="20" id="gAY-9i-9KG"/>
                             <constraint firstItem="Ot1-pz-tZw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iMa-lm-hMF"/>
                             <constraint firstItem="eXl-6Z-mdn" firstAttribute="top" secondItem="sNw-Mu-p7k" secondAttribute="bottom" constant="106" id="k4u-ey-iNQ"/>
                             <constraint firstItem="3aI-iR-pkf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kEP-6S-i51"/>
@@ -178,8 +195,10 @@
                         <outlet property="cityLabel" destination="frE-1l-XVn" id="k5q-EY-Soc"/>
                         <outlet property="dateLabel" destination="rlg-Eb-XN2" id="Hbx-WG-fNk"/>
                         <outlet property="dayLabel" destination="BK3-BV-Vw7" id="T1i-JN-AR5"/>
+                        <outlet property="forecastInNextDaysButton" destination="bsg-ox-vKY" id="bXe-8A-JUe"/>
                         <outlet property="tempFeelsLikeLabel" destination="Rv4-PV-oDB" id="a7L-GY-NfC"/>
                         <outlet property="temperatureLabel" destination="xbb-l9-oF2" id="p90-OE-cId"/>
+                        <segue destination="szB-Bm-orl" kind="presentation" identifier="forecastInFiveDays" modalPresentationStyle="automatic" modalTransitionStyle="coverVertical" id="mNW-uG-Lzy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -195,6 +214,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CCw-4f-a2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1798" y="125"/>
+        </scene>
+        <!--WWCityDetailsTableViewController-->
+        <scene sceneID="1Fr-bd-tkI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FindCityMap" referencedIdentifier="WWCityDetailsTableViewController" id="szB-Bm-orl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fF1-RM-mzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896" y="91"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jLK-vs-jt1">

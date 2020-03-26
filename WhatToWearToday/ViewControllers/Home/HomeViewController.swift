@@ -23,7 +23,12 @@ class HomeViewController: UIViewController , HasDependencies {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var tempFeelsLikeLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
-    
+    @IBOutlet weak var forecastInNextDaysButton: UIButton!
+
+    // MARK: - Properties
+
+    var cityForecast: ForecastModel?
+
     // MARK: - View life cycle
 
     override func viewDidLoad() {
@@ -83,11 +88,14 @@ class HomeViewController: UIViewController , HasDependencies {
                     return
                 }
 
-                // Beautify dummy data from server, ex 284.21 -> 28°
-                let temperature = String(Int(round(cityTemperature.temp/10))) + "°"
-                let feelsLike = "Feels like " + String(Int(round(cityTemperature.feelsLike/10))) + "°"
+                self.cityForecast = cityForecast
 
-                self.temperatureLabel.text = temperature
+                let temperature = cityTemperature.tempToCelsius
+
+                //let temperature = String(Int(round(cityTemperature.temp/10))) + "°"
+                let feelsLike = "Feels like " + String(cityTemperature.feelsLikeToCelsius) + "°"
+
+                self.temperatureLabel.text = String(temperature) + "°"
                 self.tempFeelsLikeLabel.text = feelsLike
             }
         }
@@ -136,6 +144,16 @@ class HomeViewController: UIViewController , HasDependencies {
         }
     }
 
+    // MARK: - Actions
+
+    @IBAction func forecastInNextDaysButtonPressed(_ sender: Any) {
+        guard let cityForecastData = cityForecast else {
+            assertionFailure("CityForecast data is empty!")
+            return
+        }
+
+        performSegue(withIdentifier: .forecastInFiveDays, sender: cityForecastData)
+    }
 }
 
 // MARK: - Navigation
@@ -143,6 +161,7 @@ class HomeViewController: UIViewController , HasDependencies {
 extension HomeViewController: SegueHandlerType {
     enum SegueIdentifier: String {
         case findCityMap
+        case forecastInFiveDays
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -150,6 +169,12 @@ extension HomeViewController: SegueHandlerType {
         switch segueIdentifierForSegue(segue: segue) {
         case .findCityMap:
             break
+
+        case .forecastInFiveDays:
+            if let cityDetailsTableViewController = segue.destination as? WWCityDetailsTableViewController,
+                let cityForecast = sender as? ForecastModel {
+                cityDetailsTableViewController.forecast = cityForecast
+            }
         }
     }
 

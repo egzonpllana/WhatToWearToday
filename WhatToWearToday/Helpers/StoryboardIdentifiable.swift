@@ -26,6 +26,8 @@ extension UITableViewCell: StoryboardIdentifiable { }
 extension UITableViewHeaderFooterView: StoryboardIdentifiable { }
 extension UICollectionReusableView: StoryboardIdentifiable { }
 
+// https://cocoacasts.com/dequeueing-reusable-views-with-generics-and-protocols
+
 public extension UITableView {
 
     /// Use with UITableView:
