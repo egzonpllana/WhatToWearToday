@@ -1,4 +1,7 @@
 # WhatToWearToday #
+
+![app-preview](https://user-images.githubusercontent.com/27929436/99556653-17863e00-29c2-11eb-9bbd-094a37eb1ed1.png)
+
 # Swifty Protocol-Oriented with Dependency Injection #
 WhatToWearToday - iOS App.
 
