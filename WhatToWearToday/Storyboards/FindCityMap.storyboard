@@ -15,56 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhd-Cp-yq1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="81"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-ui-lyR" customClass="UIExtendedView" customModule="WhatToWearToday" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="17" width="382" height="50"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9r-dm-ZHZ">
-                                                <rect key="frame" x="12" y="15" width="358" height="20"/>
-                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                <connections>
-                                                    <action selector="locationTextFieldPrimaryActionTriggered:" destination="bHT-d7-Bgw" eventType="primaryActionTriggered" id="Dlk-u0-6YE"/>
-                                                </connections>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2ky-Em-whR"/>
-                                            <constraint firstItem="x9r-dm-ZHZ" firstAttribute="centerY" secondItem="a2b-ui-lyR" secondAttribute="centerY" id="56B-Xl-PqW"/>
-                                            <constraint firstAttribute="trailing" secondItem="x9r-dm-ZHZ" secondAttribute="trailing" constant="12" id="eta-K6-vY5"/>
-                                            <constraint firstItem="x9r-dm-ZHZ" firstAttribute="leading" secondItem="a2b-ui-lyR" secondAttribute="leading" constant="12" id="sXs-nJ-OKw"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="0.0" height="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.059999999999999998"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="a2b-ui-lyR" firstAttribute="leading" secondItem="Fhd-Cp-yq1" secondAttribute="leading" constant="16" id="97y-6s-X0s"/>
-                                    <constraint firstItem="a2b-ui-lyR" firstAttribute="top" secondItem="Fhd-Cp-yq1" secondAttribute="top" constant="17" id="mvY-T9-KEt"/>
-                                    <constraint firstAttribute="height" constant="81" id="n1m-68-JhY"/>
-                                    <constraint firstAttribute="trailing" secondItem="a2b-ui-lyR" secondAttribute="trailing" constant="16" id="oTZ-gm-mCC"/>
-                                    <constraint firstAttribute="bottom" secondItem="a2b-ui-lyR" secondAttribute="bottom" constant="14" id="tll-iQ-qHz"/>
-                                </constraints>
-                            </view>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="As0-YR-Pts">
                                 <rect key="frame" x="0.0" y="169" width="414" height="633"/>
                                 <connections>
@@ -142,6 +92,56 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhd-Cp-yq1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="81"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-ui-lyR" customClass="UIExtendedView" customModule="WhatToWearToday" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="17" width="382" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9r-dm-ZHZ" customClass="DropDownSearchTextField" customModule="WhatToWearToday" customModuleProvider="target">
+                                                <rect key="frame" x="12" y="15" width="358" height="20"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <action selector="locationTextFieldPrimaryActionTriggered:" destination="bHT-d7-Bgw" eventType="primaryActionTriggered" id="Dlk-u0-6YE"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2ky-Em-whR"/>
+                                            <constraint firstItem="x9r-dm-ZHZ" firstAttribute="centerY" secondItem="a2b-ui-lyR" secondAttribute="centerY" id="56B-Xl-PqW"/>
+                                            <constraint firstAttribute="trailing" secondItem="x9r-dm-ZHZ" secondAttribute="trailing" constant="12" id="eta-K6-vY5"/>
+                                            <constraint firstItem="x9r-dm-ZHZ" firstAttribute="leading" secondItem="a2b-ui-lyR" secondAttribute="leading" constant="12" id="sXs-nJ-OKw"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="0.0" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.059999999999999998"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="a2b-ui-lyR" firstAttribute="leading" secondItem="Fhd-Cp-yq1" secondAttribute="leading" constant="16" id="97y-6s-X0s"/>
+                                    <constraint firstItem="a2b-ui-lyR" firstAttribute="top" secondItem="Fhd-Cp-yq1" secondAttribute="top" constant="17" id="mvY-T9-KEt"/>
+                                    <constraint firstAttribute="height" constant="81" id="n1m-68-JhY"/>
+                                    <constraint firstAttribute="trailing" secondItem="a2b-ui-lyR" secondAttribute="trailing" constant="16" id="oTZ-gm-mCC"/>
+                                    <constraint firstAttribute="bottom" secondItem="a2b-ui-lyR" secondAttribute="bottom" constant="14" id="tll-iQ-qHz"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
